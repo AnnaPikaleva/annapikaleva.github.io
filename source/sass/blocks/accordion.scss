@@ -1,0 +1,50 @@
+.accordion__button {
+  @media (max-width: $vp-767) {
+    position: relative;
+    border: none;
+    cursor: pointer;
+    width: 87%;
+    height: 30px;
+
+    &::before,
+    &::after {
+      content: "";
+      width: 15px;
+      height: 1px;
+      background-color: $color-toggle;
+      position: absolute;
+      right: 2px;
+      top: 8px;
+    }
+
+    &::after {
+      transform: rotate(-90deg);
+    }
+  }
+}
+
+.accordion__button.active {
+  @media (max-width: $vp-767) {
+    &::after {
+      transform: rotate(0deg);
+    }
+  }
+}
+
+.accordion__list {
+  @media (max-width: $vp-1023) {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  @media (max-width: $vp-767) {
+    display: block;
+  }
+
+  @media (max-width: $vp-767) {
+    &--closed {
+      display: none;
+    }
+  }
+}

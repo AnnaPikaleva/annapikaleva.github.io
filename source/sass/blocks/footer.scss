@@ -1,0 +1,155 @@
+.footer {
+  background-color: $background-color-dark;
+  color: $color-default-white;
+  flex-shrink: 0;
+}
+
+.footer__container {
+  padding: 50px 55px 55px 25px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  @media (max-width: $vp-1400) {
+    padding: 50px 55px 55px 50px;
+  }
+
+  @media (max-width: $vp-1023) {
+    width: auto;
+    display: block;
+    padding: 50px 50px;
+  }
+
+  @media (max-width: $vp-767) {
+    padding: 36px 0 35px;
+  }
+}
+
+.footer__container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer__social {
+  @media (max-width: $vp-1220) {
+    width: auto;
+  }
+
+  @media (max-width: $vp-1023) {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    margin-bottom: 22px;
+    flex-wrap: wrap;
+    max-width: 100%;
+  }
+
+  @media (max-width: $vp-767) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 0;
+    padding-bottom: 23px;
+  }
+}
+
+.footer__social a {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.footer__social img {
+  margin-bottom: 31px;
+  margin-left: -4px;
+
+  @media (max-width: $vp-1023) {
+    margin-left: 0;
+    margin-bottom: 0;
+  }
+
+  @media (max-width: $vp-767) {
+    margin-bottom: 18px;
+    margin-left: -4px;
+  }
+}
+
+.footer__social-list {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+  @media (max-width: $vp-1023) {
+    justify-content: flex-end;
+  }
+
+  @media (max-width: $vp-767) {
+    justify-content: center;
+    align-items: flex-start;
+  }
+}
+
+.footer__social-item {
+  margin-right: 25px;
+
+  &:first-child {
+    margin-left: 10px;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  @media (max-width: $vp-1023) {
+    align-self: center;
+    margin-top: -4px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}
+
+.footer__social-item svg {
+  fill: $background-default-color;
+
+  &:hover {
+    fill: $color-light-blue;
+  }
+}
+
+.footer__social-link {
+  &:focus svg {
+    fill: $color-light-blue;
+  }
+}
+
+.footer__wrapper-position {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 86px;
+  margin-left: 157px;
+  padding-top: 8px;
+
+  @media (max-width: $vp-1400) {
+    gap: 60px;
+    margin-left: 85px;
+  }
+
+  @media (max-width: $vp-1220) {
+    gap: 15px;
+    margin-left: 35px;
+  }
+
+  @media (max-width: $vp-1023) {
+    margin-left: 0;
+    justify-content: space-between;
+  }
+
+  @media (max-width: $vp-767) {
+    display: block;
+    width: auto;
+    padding-top: 0;
+  }
+}

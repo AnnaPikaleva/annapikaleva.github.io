@@ -1,0 +1,149 @@
+.field input {
+  border: none;
+  border-radius: 3px;
+  background-color: $color-background-field;
+  padding: 15px;
+  width: 100%;
+  min-height: 50px;
+  box-sizing: border-box;
+  color: $color-default-white;
+  font-family: $ff-ptmono;
+  font-size: 16px;
+  cursor: pointer;
+
+  &::placeholder {
+    font-family: $ff-ptmono;
+    font-size: 16px;
+    line-height: 22px;
+    color: $color-default-white;
+    opacity: 0.8;
+  }
+}
+
+.field input {
+  &:hover {
+    outline: 2px solid $color-default-white;
+  }
+
+  &:focus {
+    outline: 2px solid $color-default-white;
+  }
+}
+
+.field textarea {
+  width: 100%;
+  border: none;
+  border-radius: 3px;
+  background-color: $color-background-field;
+  padding: 25px 15px;
+  box-sizing: border-box;
+  min-height: 155px;
+  margin-bottom: 15px;
+  color: $color-default-white;
+  font-family: $ff-ptmono;
+  font-size: 16px;
+  cursor: pointer;
+
+  &::placeholder {
+    font-family: $ff-ptmono;
+    font-size: 16px;
+    line-height: 22px;
+    color: $color-default-white;
+    opacity: 0.8;
+  }
+
+  &:hover,
+  &:focus {
+    color: $color-default-white;
+    outline: 2px solid $color-default-white;
+  }
+}
+
+.field button {
+  background-color: $color-dark-blue;
+  padding: 14px 25px;
+  font-family: $ff-roboto;
+  font-size: 16px;
+  line-height: 19px;
+  color: $color-default-white;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  box-sizing: border-box;
+  text-align: center;
+  user-select: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+
+  &:hover {
+    color: $color-light-blue;
+  }
+}
+
+.field__checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:last-of-type {
+    position: relative;
+    display: block;
+    padding-left: 40px;
+  }
+}
+
+.field span {
+  &:last-of-type {
+    font-size: 14px;
+    line-height: 16px;
+    opacity: 0.8;
+    vertical-align: middle;
+    display: inline-block;
+    margin-top: 15px;
+  }
+}
+
+.field__control-mark {
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  background-color: $color-light-blue;
+  border: 1px solid $color-default-white;
+  border-radius: 2px;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 2px 10px $color-default-white;
+  }
+}
+
+.field input[type="checkbox"]:checked + span {
+  &::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 8px;
+    height: 5px;
+    background-image: url("../../img/svg/check.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+}
+
+.field input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  left: 7px;
+  width: 15px;
+  height: 2px;
+  min-height: 14px;
+}
+
+.field__checkbox input:focus + span {
+  border-color: $background-color-dark;
+  background-color: $color-background-field;
+  outline: 5px solid $color-background-field;
+}
