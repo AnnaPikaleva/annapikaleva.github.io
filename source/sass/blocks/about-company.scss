@@ -1,8 +1,8 @@
 .about-company__container {
-  display: flex;
-  justify-content: center;
   padding: 60px 350px 97px;
   gap: 100px;
+  display: grid;
+  grid-template-columns: 150px 1fr;
 
 
   @media (max-width: $vp-1600) {

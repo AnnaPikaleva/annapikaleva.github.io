@@ -38,7 +38,6 @@
   padding: 25px 15px;
   box-sizing: border-box;
   min-height: 155px;
-  margin-bottom: 15px;
   color: $color-default-white;
   font-family: $ff-ptmono;
   font-size: 16px;
@@ -61,7 +60,6 @@
 
 .field button {
   background-color: $color-dark-blue;
-  padding: 14px 25px;
   font-family: $ff-roboto;
   font-size: 16px;
   line-height: 19px;
@@ -100,7 +98,6 @@
     opacity: 0.8;
     vertical-align: middle;
     display: inline-block;
-    margin-top: 15px;
   }
 }
 

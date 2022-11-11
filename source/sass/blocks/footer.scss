@@ -1,7 +1,6 @@
 .footer {
   background-color: $background-color-dark;
   color: $color-default-white;
-  flex-shrink: 0;
 }
 
 .footer__container {
@@ -32,6 +31,8 @@
 }
 
 .footer__social {
+  max-width: 210px;
+
   @media (max-width: $vp-1220) {
     width: auto;
   }
@@ -54,13 +55,14 @@
   }
 }
 
-.footer__social a {
+.footer__social-item a {
   display: inline-block;
   vertical-align: middle;
+  padding: 11px;
 }
 
 .footer__social img {
-  margin-bottom: 31px;
+  margin-bottom: 20px;
   margin-left: -4px;
 
   @media (max-width: $vp-1023) {
@@ -74,14 +76,16 @@
   }
 }
 
-.footer__social-list {
+.footer__social .footer__social-list {
   margin: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
 
+
   @media (max-width: $vp-1023) {
     justify-content: flex-end;
+    max-width: 210px;
   }
 
   @media (max-width: $vp-767) {
@@ -91,11 +95,8 @@
 }
 
 .footer__social-item {
-  margin-right: 25px;
-
-  &:first-child {
-    margin-left: 10px;
-  }
+  margin-right: 3px;
+  margin-bottom: 25px;
 
   &:last-child {
     margin-right: 0;
@@ -107,6 +108,10 @@
 
     &:first-child {
       margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 25px;
     }
   }
 }

@@ -31,7 +31,7 @@
   align-items: center;
   width: 100%;
   min-height: 100%;
-  padding: 60px 40px;
+  padding: 120px 60px 40px;
   padding-top: 0;
   margin-left: -8px;
 }
@@ -48,7 +48,7 @@
 .modal__content {
   position: relative;
   width: 500px;
-  padding: 33px 42px 45px 40px;
+  padding: 38px 42px 45px 40px;
   background-color: $modal-window-background-blue;
   border-radius: 3px;
 }
@@ -60,12 +60,12 @@
   font-weight: 400;
   color: $color-default-white;
   margin: 0;
-  margin-bottom: 8px;
+  margin-bottom: 5px;
 }
 
 .modal__wrapper p {
   margin: 0;
-  margin-bottom: 40px;
+  margin-bottom: 38px;
   color: $color-default-white;
 }
 
@@ -85,7 +85,7 @@
 }
 
 .modal__wrapper button {
-  padding: 14px 60px;
+  padding: 15px 60px 12px;
   width: 100%;
 }
 
@@ -103,6 +103,7 @@
     margin-left: -5px;
     color: $color-default-white;
     letter-spacing: 0.01em;
+    margin-top: 17px;
   }
 }
 

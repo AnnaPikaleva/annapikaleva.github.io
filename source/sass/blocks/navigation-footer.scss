@@ -29,8 +29,8 @@
   @media (max-width: $vp-767) {
     display: block;
     position: absolute;
-    top: 21px;
-    right: 25px;
+    top: -20px;
+    right: 0;
     background-color: transparent;
   }
 }
@@ -51,6 +51,7 @@
 
   @media (max-width: $vp-767) {
     margin-bottom: 21px;
+    padding: 0 25px;
   }
 }
 
@@ -108,7 +109,6 @@
   }
 
   @media (max-width: $vp-767) {
-    width: 84%;
     margin: 0 auto;
   }
 }
