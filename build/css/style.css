@@ -661,7 +661,7 @@ button,
   position: relative;
   width: 28%;
   min-height: 650px;
-  background-image: url("../img/bacground-card-1.png");
+  background-image: url("../img/bacground-card-1.webp");
   background-repeat: no-repeat;
   background-size: cover;
   -webkit-box-sizing: border-box;
@@ -1253,27 +1253,27 @@ button,
 
 @media (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1024px) and (-o-min-device-pixel-ratio: 2/1), (min-width: 1024px) and (min-resolution: 2dppx) {
   .products__item {
-    background-image: url("../img/bacground-card-1@2x.png");
+    background-image: url("../img/bacground-card-1@2x.webp");
   }
 
   .products__item--card2 {
-    background-image: url("../img/bacground-card-2@2x.png");
+    background-image: url("../img/bacground-card-2@2x.webp");
   }
 
   .products__item--card3 {
-    background-image: url("../img/bacground-card-3@2x.png");
+    background-image: url("../img/bacground-card-3@2x.webp");
   }
 }
 
 @media (min-width: 1024px) {
   .products__item--card2 {
-    background-image: url("../img/bacground-card-2.png");
+    background-image: url("../img/bacground-card-2.webp");
     background-repeat: no-repeat;
     background-size: cover;
   }
 
   .products__item--card3 {
-    background-image: url("../img/bacground-card-3.png");
+    background-image: url("../img/bacground-card-3.webp");
     background-repeat: no-repeat;
     background-size: cover;
   }
@@ -1541,15 +1541,15 @@ button,
     width: 100%;
     min-height: 250px;
     padding: 37px 90px 37px 45px;
-    background-image: url("../img/background-card-1-tablet.png");
+    background-image: url("../img/background-card-1-tablet.webp");
   }
 
   .products__item--card2 {
-    background-image: url("../img/background-card-2-tablet.png");
+    background-image: url("../img/background-card-2-tablet.webp");
   }
 
   .products__item--card3 {
-    background-image: url("../img/background-card-3-tablet.png");
+    background-image: url("../img/background-card-3-tablet.webp");
   }
 
   .products__item::before {
@@ -1633,7 +1633,7 @@ button,
   .footer__container {
     width: auto;
     display: block;
-    padding: 50px 50px;
+    padding: 50px 39px 50px 50px;
   }
 
   .footer__social {
@@ -1667,6 +1667,7 @@ button,
     -ms-grid-row-align: center;
     align-self: center;
     margin-top: -4px;
+    margin-bottom: 0;
   }
 
   .footer__social-item:first-child {
@@ -1674,7 +1675,7 @@ button,
   }
 
   .footer__social-item:last-child {
-    margin-right: 25px;
+    margin-right: 0;
   }
 
   .footer__wrapper-position {
@@ -1703,7 +1704,7 @@ button,
   }
 
   .contacts__wrapper {
-    margin-right: 13px;
+    margin-right: 24px;
   }
 
   .contacts__wrapper h2 {
@@ -1729,7 +1730,7 @@ button,
 
   .main-nav__list {
     margin-right: 20px;
-    margin-top: -11px;
+    margin-top: 7px;
     -webkit-box-pack: end;
     -ms-flex-pack: end;
     justify-content: flex-end;
@@ -1741,7 +1742,7 @@ button,
   }
 
   .main-nav__mail-link {
-    padding: 10px;
+    padding: 15px 10px 10px;
     margin: 0;
   }
 
@@ -1751,7 +1752,7 @@ button,
   }
 
   .main-nav__phone {
-    padding: 10px;
+    padding: 15px 10px 10px;
     margin: 0;
   }
 
@@ -1771,15 +1772,15 @@ button,
 
 @media (max-width: 1023px) and (-webkit-min-device-pixel-ratio: 2), (max-width: 1023px) and (-o-min-device-pixel-ratio: 2/1), (max-width: 1023px) and (min-resolution: 2dppx) {
   .products__item {
-    background-image: url("../img/background-card-1-tablet@2x.png");
+    background-image: url("../img/background-card-1-tablet@2x.webp");
   }
 
   .products__item--card2 {
-    background-image: url("../img/background-card-2-tablet@2x.png");
+    background-image: url("../img/background-card-2-tablet@2x.webp");
   }
 
   .products__item--card3 {
-    background-image: url("../img/background-card-3-tablet@2x.png");
+    background-image: url("../img/background-card-3-tablet@2x.webp");
   }
 }
 
@@ -1790,7 +1791,7 @@ button,
 
   .main-header__container {
     margin: 0;
-    padding: 14px 25px 20px;
+    padding: 14px 25px 0;
   }
 
   .main-header__logo-link img {
@@ -1799,7 +1800,7 @@ button,
   }
 
   .main-page__intro {
-    min-height: 605px;
+    min-height: 610px;
     padding-bottom: 60px;
   }
 
@@ -1821,6 +1822,7 @@ button,
     font-size: 36px;
     line-height: 42px;
     margin-bottom: 19px;
+    margin-top: 90px;
   }
 
   .main-page__container p {
@@ -1924,6 +1926,9 @@ button,
   }
 
   .about-company__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     padding: 28px 25px 79px;
   }
 
@@ -1984,15 +1989,15 @@ button,
   .products__item {
     letter-spacing: -0.05em;
     padding: 25px 28px;
-    background-image: url("../img/background-card1-mobile.png");
+    background-image: url("../img/background-card1-mobile.webp");
   }
 
   .products__item--card2 {
-    background-image: url("../img/background-card2-mobile.png");
+    background-image: url("../img/background-card2-mobile.webp");
   }
 
   .products__item--card3 {
-    background-image: url("../img/background-card3-mobile@2x.png");
+    background-image: url("../img/background-card3-mobile@2x.webp");
   }
 
   .products__item::before {
@@ -2085,21 +2090,30 @@ button,
     -ms-flex-pack: start;
     justify-content: flex-start;
     margin-bottom: 0;
-    padding-bottom: 23px;
+    padding-bottom: 12px;
   }
 
   .footer__social img {
-    margin-bottom: 18px;
+    margin-bottom: 7px;
     margin-left: -4px;
   }
 
   .footer__social .footer__social-list {
+    margin-left: 2px;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    -webkit-box-align: start;
-    -ms-flex-align: start;
-    align-items: flex-start;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .footer__social-item {
+    margin-bottom: 0;
+  }
+
+  .footer__social-item:last-child {
+    margin-right: 0;
   }
 
   .footer__wrapper-position {
@@ -2177,7 +2191,7 @@ button,
 
   .contacts__wrapper {
     padding-top: 23px;
-    padding-bottom: 9px;
+    padding-bottom: 5px;
     margin-right: 0;
   }
 
@@ -2205,8 +2219,10 @@ button,
   .main-nav__list {
     margin: 0;
     margin-right: 9px;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    max-width: 120px;
+    margin-top: 5px;
   }
 
   .accordion {
@@ -2228,7 +2244,7 @@ button,
     background-color: #c4c4c4;
     position: absolute;
     right: 25px;
-    top: 50%;
+    top: 45%;
   }
 
   .accordion__button::after {
@@ -2255,14 +2271,14 @@ button,
 
 @media (max-width: 767px) and (-webkit-min-device-pixel-ratio: 2), (max-width: 767px) and (-o-min-device-pixel-ratio: 2/1), (max-width: 767px) and (min-resolution: 2dppx) {
   .products__item {
-    background-image: url("../img/background-card1-mobile@2x.png");
+    background-image: url("../img/background-card1-mobile@2x.webp");
   }
 
   .products__item--card2 {
-    background-image: url("../img/background-card2-mobile@2x.png");
+    background-image: url("../img/background-card2-mobile@2x.webp");
   }
 
   .products__item--card3 {
-    background-image: url("../img/background-card3-mobile@2x.png");
+    background-image: url("../img/background-card3-mobile@2x.webp");
   }
 }

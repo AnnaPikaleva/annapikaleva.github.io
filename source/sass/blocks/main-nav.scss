@@ -20,20 +20,27 @@
 
   @media (max-width: $vp-1023) {
     margin-right: 20px;
-    margin-top: -11px;
+    margin-top: 7px;
     justify-content: flex-end;
+    // align-items: flex-start;
     gap: 19px;
   }
 
   @media (max-width: $vp-767) {
     margin: 0;
     margin-right: 9px;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    max-width: 120px;
+    margin-top: 5px;
   }
 }
 
 .main-nav__item {
   margin-bottom: 25px;
+
+  @media (max-width: $vp-1023) {
+    // margin-bottom: 8px;
+  }
 }
 
 .main-nav__item a {
@@ -57,7 +64,7 @@
   }
 
   @media (max-width: $vp-1023) {
-    padding: 10px;
+    padding: 15px 10px 10px;
     margin: 0;
   }
 }
@@ -78,7 +85,7 @@
 
 .main-nav__phone {
   @media (max-width: $vp-1023) {
-    padding: 10px;
+    padding: 15px 10px 10px;
     margin: 0;
   }
 }
