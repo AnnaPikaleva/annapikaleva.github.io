@@ -1,12 +1,12 @@
 .form {
   padding: 51px 163px 50px;
-  background-image: url("../../img/form-background.png");
+  background-image: url("../img/form-background.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-color: $background-light-blue;
 
   @media (min-resolution: 2dppx) {
-    background-image: url("../../img/form-background@2x.webp");
+    background-image: url("../img/form-background@2x.webp");
   }
 
   @media (max-width: $vp-1280) {
@@ -44,6 +44,11 @@
   margin: 0;
   margin-top: -10px;
   margin-bottom: 8px;
+  max-width: 493px;
+
+  @media (max-width: $vp-1280) {
+    max-width: 380px;
+  }
 
   @media (max-width: $vp-1023) {
     font-size: 34px;
@@ -51,6 +56,7 @@
     text-align: center;
     margin: 0;
     margin-bottom: 5px;
+    max-width: none;
   }
 
   @media (max-width: $vp-767) {

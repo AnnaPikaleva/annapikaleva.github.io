@@ -3,7 +3,7 @@
 }
 
 .main-page__wrap {
-  background-image: url("../img/big-main-background.png");
+  background-image: url("../img/big-main-background.webp");
   background-repeat: no-repeat;
   background-size: cover;
   filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
@@ -17,7 +17,7 @@
 
   @media (max-width: $vp-1023) {
     min-height: 638px;
-    background-image: url("../img/small-main-background.png");
+    background-image: url("../img/small-main-background.webp");
     filter: none;
 
     @media (min-resolution: 2dppx) {
@@ -27,7 +27,7 @@
 
   @media (max-width: $vp-767) {
     min-height: 500px;
-    background-image: url("../img/big-main-background.png");
+    background-image: url("../img/big-main-background.webp");
 
     @media (min-resolution: 2dppx) {
       background-image: url("../img/big-main-background@2x.webp");
@@ -38,7 +38,7 @@
 .main-page__container {
   color: $color-font;
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  padding: 270px 198px 0;
+  padding: 270px 198px 30px;
 
   @media (max-width: $vp-1023) {
     padding: 268px 45px 30px;

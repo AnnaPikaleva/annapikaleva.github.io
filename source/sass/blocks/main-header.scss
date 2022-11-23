@@ -54,11 +54,7 @@
 
 .main-header__logo.is-active {
   @media (max-width: $vp-767) {
-    position: absolute;
-    top: 0;
-    left: 13%;
-    z-index: 25;
-    fill: $color-font-dark;
+    display: none;
   }
 }
 
