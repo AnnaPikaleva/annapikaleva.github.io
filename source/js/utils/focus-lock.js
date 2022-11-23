@@ -14,70 +14,70 @@ const SELECTORS = [
 
 export class FocusLock {
   constructor() {
-    this.lockedSelector = null;
-    this.focusableElements = null;
-    this.endElement = null;
-    this.selectors = SELECTORS;
+    this._lockedSelector = null;
+    this._focusableElements = null;
+    this._endElement = null;
+    this._selectors = SELECTORS;
 
-    this.documentKeydownHandler = this.documentKeydownHandler.bind(this);
+    this._documentKeydownHandler = this._documentKeydownHandler.bind(this);
   }
 
-  documentKeydownHandler(evt) {
+  _documentKeydownHandler(evt) {
     const activeElement = document.activeElement;
     if (evt.key === 'Tab') {
-      if (!this.focusableElements.length) {
+      if (!this._focusableElements.length) {
         evt.preventDefault();
         activeElement.blur();
         return;
       }
-      if (this.focusableElements.length === 1) {
+      if (this._focusableElements.length === 1) {
         evt.preventDefault();
-        this.focusableElements[0].focus();
+        this._focusableElements[0].focus();
         return;
       }
-      if (this.focusableElements.length > 1 && !activeElement.closest(this.lockedSelector)) {
+      if (this._focusableElements.length > 1 && !activeElement.closest(this._lockedSelector)) {
         evt.preventDefault();
-        this.focusableElements[0].focus();
+        this._focusableElements[0].focus();
         return;
       }
     }
-    if (evt.key === 'Tab' && !evt.shiftKey && activeElement === this.focusableElements[this.focusableElements.length - 1]) {
+    if (evt.key === 'Tab' && !evt.shiftKey && activeElement === this._focusableElements[this._focusableElements.length - 1]) {
       evt.preventDefault();
-      this.focusableElements[0].focus();
+      this._focusableElements[0].focus();
     }
-    if (evt.key === 'Tab' && evt.shiftKey && activeElement === this.focusableElements[0]) {
+    if (evt.key === 'Tab' && evt.shiftKey && activeElement === this._focusableElements[0]) {
       evt.preventDefault();
-      this.focusableElements[this.focusableElements.length - 1].focus();
+      this._focusableElements[this._focusableElements.length - 1].focus();
     }
   }
 
   lock(lockedSelector, startFocus = true) {
     this.unlock();
-    this.lockedSelector = lockedSelector;
-    const lockedElement = document.querySelector(this.lockedSelector);
+    this._lockedSelector = lockedSelector;
+    const lockedElement = document.querySelector(this._lockedSelector);
     if (!lockedElement) {
       return;
     }
-    this.focusableElements = lockedElement.querySelectorAll(this.selectors);
-    this.endElement = document.activeElement;
-    const startElement = lockedElement.querySelector('[data-focus]') || this.focusableElements[0];
-    if (this.endElement) {
-      this.endElement.blur();
+    this._focusableElements = lockedElement.querySelectorAll(this._selectors);
+    this._endElement = document.activeElement;
+    const startElement = lockedElement.querySelector('[data-focus]') || this._focusableElements[0];
+    if (this._endElement) {
+      this._endElement.blur();
     }
     if (startElement && startFocus) {
       startElement.focus();
     }
-    document.addEventListener('keydown', this.documentKeydownHandler);
+    document.addEventListener('keydown', this._documentKeydownHandler);
   }
 
   unlock(returnFocus = true) {
-    if (this.endElement && returnFocus) {
-      this.endElement.focus();
+    if (this._endElement && returnFocus) {
+      this._endElement.focus();
     }
-    this.lockedSelector = null;
-    this.focusableElements = null;
-    this.endElement = null;
-    document.removeEventListener('keydown', this.documentKeydownHandler);
+    this._lockedSelector = null;
+    this._focusableElements = null;
+    this._endElement = null;
+    document.removeEventListener('keydown', this._documentKeydownHandler);
   }
 }
 

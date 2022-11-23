@@ -9,35 +9,36 @@
 // ---------------------------------
 
 @import "variables";
+@import "mixins";
 @import "global/fonts";
 @import "global/reboot";
 @import "global/utils";
+@import "global/container";
 
 // Blocks
 // ---------------------------------
 
-@import "blocks/button.scss";
-@import "blocks/modal";
-@import "blocks/main-header.scss";
 @import "blocks/main-page.scss";
+@import "blocks/main-header.scss";
+@import "blocks/navigation.scss";
+@import "blocks/about-trip.scss";
 @import "blocks/advantages.scss";
-@import "blocks/about-company.scss";
-@import "blocks/products.scss";
-@import "blocks/feedback-form.scss";
-@import "blocks/footer.scss";
-@import "blocks/navigation-footer.scss";
-@import "blocks/contacts.scss";
-@import "blocks/main-nav.scss";
-@import "blocks/accordion.scss";
+@import "blocks/catalog.scss";
+@import "blocks/form.scss";
 @import "blocks/field.scss";
-@import "blocks/page-index.scss";
+@import "blocks/contacts.scss";
+@import "blocks/map.scss";
+@import "blocks/main-footer.scss";
+@import "blocks/social.scss";
+@import "blocks/site-list.scss";
+@import "blocks/navigation-footer.scss";
+@import "blocks/nojs.scss";
 
 // ---------------------------------
 
 // ❗❗❗ запрещено использовать изображения в css, касается как jpg \ png, так и svg
 
 // ❗ обязательно используйте mixin hover-focus для отключения ховеров на тач устройствах
-
 // адаптив пишем внутри каждого класса (смотрим container.scss)
 
 // для фикса проблем с vh на iOS в сборке подключен скрипт

@@ -1,0 +1,11 @@
+.nojs .main-header__container {
+  @media (max-width: $vp-767) {
+    display: block;
+  }
+}
+
+// .nojs .main-header__logo {
+//   @media (max-width: $vp-767) {
+//     display: none;
+//   }
+// }

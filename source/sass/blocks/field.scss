@@ -1,116 +1,101 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 19px;
+}
+
 .field input {
-  border: none;
-  border-radius: 3px;
-  background-color: $color-background-field;
-  padding: 15px;
+  min-height: 43px;
   width: 100%;
-  min-height: 50px;
-  box-sizing: border-box;
-  color: $color-default-white;
-  font-family: $ff-ptmono;
-  font-size: 16px;
+  padding: 11px 16px;
   cursor: pointer;
+  color: $color-font-dark;
+  font-size: 14px;
+  line-height: 21px;
+  border: none;
+  margin-bottom: 1px;
 
   &::placeholder {
-    font-family: $ff-ptmono;
-    font-size: 16px;
-    line-height: 22px;
-    color: $color-default-white;
-    opacity: 0.8;
+    font-size: 14px;
+    color: $color-font-opacity;
   }
 
   &:hover {
-    outline: 2px solid $color-default-white;
+    outline: 3px solid $color-hover;
+    box-shadow: 0 2px 3px $color-hover;
   }
 
   &:focus {
-    outline: 2px solid $color-default-white;
-  }
-}
-
-.field textarea {
-  width: 100%;
-  border: none;
-  border-radius: 3px;
-  background-color: $color-background-field;
-  padding: 25px 15px;
-  box-sizing: border-box;
-  min-height: 155px;
-  color: $color-default-white;
-  font-family: $ff-ptmono;
-  font-size: 16px;
-  cursor: pointer;
-
-  &::placeholder {
-    font-family: $ff-ptmono;
-    font-size: 16px;
-    line-height: 22px;
-    color: $color-default-white;
-    opacity: 0.8;
-  }
-
-  &:hover,
-  &:focus {
-    color: $color-default-white;
-    outline: 2px solid $color-default-white;
-  }
-}
-
-.field button {
-  background-color: $color-dark-blue;
-  font-family: $ff-roboto;
-  font-size: 16px;
-  line-height: 19px;
-  color: $color-default-white;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-weight: 700;
-  box-sizing: border-box;
-  text-align: center;
-  user-select: none;
-  border: none;
-  cursor: pointer;
-  border-radius: 3px;
-
-  &:hover {
-    color: $color-light-blue;
+    outline: 3px solid $color-hover;
+    box-shadow: 0 2px 3px $color-hover;
   }
 }
 
 .field__checkbox {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  position: relative;
+  margin-bottom: 10px;
+  margin-top: -4px;
 
-  &:last-of-type {
-    position: relative;
-    display: block;
-    padding-left: 40px;
+  @media (max-width: $vp-1023) {
+    margin-bottom: 9px;
   }
+
+  @media (max-width: $vp-767) {
+    margin-top: -1px;
+    // align-items: flex-start;
+  }
+}
+
+.field input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  min-height: 14px;
 }
 
 .field span {
   &:last-of-type {
-    font-size: 14px;
-    line-height: 16px;
-    opacity: 0.8;
+    font-size: 10px;
+    line-height: 13px;
+    color: $color-font;
     vertical-align: middle;
     display: inline-block;
+    padding-left: 23px;
+
+    @media (max-width: $vp-767) {
+      letter-spacing: 0;
+      line-height: 12px;
+      text-align: left;
+      padding-left: 28px;
+    }
   }
 }
 
 .field__control-mark {
-  width: 14px;
-  height: 14px;
+  width: 18px;
+  height: 18px;
   position: absolute;
-  background-color: $color-light-blue;
-  border: 1px solid $color-default-white;
-  border-radius: 2px;
+  top: 4px;
+  left: 0;
+  background-color: $color-font;
   cursor: pointer;
 
   &:hover,
   &:focus {
-    box-shadow: 0 2px 10px $color-default-white;
+    outline: 3px solid $color-hover;
+    box-shadow: 0 2px 3px $color-hover;
+  }
+
+  @media (max-width: $vp-767) {
+    width: 20px;
+    height: 20px;
+    top: 2px;
   }
 }
 
@@ -118,27 +103,34 @@
   &::before {
     content: "";
     position: absolute;
-    top: 3px;
-    left: 3px;
-    width: 8px;
-    height: 5px;
+    top: 6px;
+    left: 4px;
+    width: 10px;
+    height: 6px;
     background-image: url("../img/svg/check.svg");
     background-repeat: no-repeat;
     background-size: 100%;
   }
 }
 
-.field input[type="checkbox"] {
-  position: absolute;
-  opacity: 0;
-  left: 7px;
-  width: 15px;
-  height: 2px;
-  min-height: 14px;
+.field__checkbox input:focus + span {
+  outline: 3px solid $color-hover;
+  box-shadow: 0 2px 3px $color-hover;
 }
 
-.field__checkbox input:focus + span {
-  border-color: $background-color-dark;
-  background-color: $color-background-field;
-  outline: 5px solid $color-background-field;
+.field button {
+  color: $color-font-dark;
+  background-color: $color-font;
+  min-height: 41px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+
+  &:hover,
+  &:focus {
+    background-color: $color-hover;
+  }
 }

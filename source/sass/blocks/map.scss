@@ -1,0 +1,30 @@
+.map {
+  position: relative;
+
+  @media (max-width: $vp-767) {
+    order: 1;
+    flex: 0 290px;
+    width: 100%;
+    min-height: 316px;
+  }
+}
+
+.map iframe {
+  width: 100%;
+
+  @media (max-width: $vp-1023) {
+    height: 335px;
+  }
+
+  @media (max-width: $vp-767) {
+    height: 100%;
+  }
+}
+
+.map__icon {
+  position: absolute;
+  top: 43%;
+  left: 45%;
+  width: 18px;
+  height: 22px;
+}

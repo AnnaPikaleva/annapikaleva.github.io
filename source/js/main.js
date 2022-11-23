@@ -1,8 +1,5 @@
 import {iosVhFix} from './utils/ios-vh-fix';
 import {initModals} from './modules/modals/init-modals';
-import {readMore} from './modules/openblock.js';
-import {moveToForm} from './modules/app.js';
-import {openList} from './modules/accordion.js';
 
 // ---------------------------------
 
@@ -12,13 +9,11 @@ window.addEventListener('DOMContentLoaded', () => {
   // ---------------------------------
 
   iosVhFix();
+  changesMenu();
+  closeMenuLink();
+  closeMenu();
 
   // Modules
-  document.getElementById('toggler').addEventListener('click', () => {
-    readMore();
-  });
-  moveToForm();
-  openList();
   // ---------------------------------
 
   // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'
@@ -28,108 +23,73 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// Focus
+// Открытие/закрытие меню
 
-document.querySelector('.main-header__button-link').addEventListener('click', function () {
-  setTimeout(() => {
-    document.querySelector('#customer-name').focus();
-  }, 100);
-});
+const navList = document.querySelector('.site-list');
+const menuOverlay = document.querySelector('.main-header__menu-overlay');
 
-// Validate form
+document.querySelectorAll('.nojs').forEach((item) => item.classList.remove('nojs'));
 
-const reg = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/;
+const changesMenu = () => {
+  const logoImg = document.querySelector('.main-header__logo');
+  const navButton = document.querySelector('.navigation__button');
 
-const form = document.querySelector('[data-form]');
-const phone = document.querySelector('[data-tel]');
-
-const generateError = function (text) {
-  let error = document.createElement('span');
-  error.className = 'feedback-form__error';
-  error.style.color = 'brown';
-  error.innerHTML = text;
-  return error;
+  navButton.addEventListener('click', function () {
+    navButton.classList.toggle('is-active');
+    navList.classList.toggle('is-active');
+    logoImg.classList.toggle('is-active');
+    document.body.classList.toggle('is-active');
+    menuOverlay.classList.toggle('is-active');
+  });
 };
 
-const removeValidation = function () {
-  let errors = document.querySelectorAll('.error');
-  for (let j = 0; j < errors.length; j++) {
-    errors[j].remove();
-  }
+const closeMenu = () => {
+  menuOverlay.addEventListener('click', () => {
+    const activeItems = document.querySelectorAll('.is-active');
+    activeItems.forEach((item) => {
+      item.classList.remove('is-active');
+    });
+  });
 };
 
-const checkPhoneMatch = function () {
-  if (!reg.test(phone.value)) {
-    let error = generateError('Формат +7 (000) 000-00-00');
-    phone.parentElement.insertBefore(error, phone);
-    return false;
-  } else {
-    return true;
-  }
+const closeMenuLink = () => {
+  const links = document.querySelectorAll('[data-link]');
+
+  links.forEach((link) => {
+    link.addEventListener('click', () => {
+      const activeItems = document.querySelectorAll('.is-active');
+      activeItems.forEach((item) => {
+        item.classList.remove('is-active');
+      });
+    });
+  });
 };
 
-form.addEventListener('submit', function (event) {
-  event.preventDefault();
-  removeValidation();
-  const valid = checkPhoneMatch();
-  if (valid) {
-    form.submit();
-  }
-});
+// Move to block
 
-// Маска для телефона
+const anchors = document.querySelectorAll('a[href*="#"]');
 
-const phoneInputs = document.querySelectorAll('input[data-tel]');
-
-const prefixNumber = (str) => {
-  if (str === '7') {
-    return '7 (';
-  }
-  if (str === '8') {
-    return '7 (';
-  }
-  if (str === '9') {
-    return '7 (9';
-  }
-  return '7 (';
-};
-
-function validation(inputValid) {
-  inputValid.addEventListener('input', () => {
-    const value = inputValid.value.replace(/\D+/g, '');
-    const numberLength = 11;
-
-    let result;
-    if (inputValid.value.includes('+8') || inputValid.value[0] === '8') {
-      result = '+';
-    } else {
-      result = '+';
-    }
-
-    for (let i = 0; i < value.length && i < numberLength; i++) {
-      switch (i) {
-        case 0:
-          result += prefixNumber(value[i]);
-          continue;
-        case 4:
-          result += ') ';
-          break;
-        case 7:
-          result += '-';
-          break;
-        case 9:
-          result += '-';
-          break;
-        default:
-          break;
-      }
-      result += value[i];
-    }
-    inputValid.value = result;
+for (let anchor of anchors) {
+  anchor.addEventListener('click', function (event) {
+    event.preventDefault();
+    const blockID = anchor.getAttribute('href');
+    document.querySelector('' + blockID).scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
   });
 }
 
-phoneInputs.forEach((phoneInput) => validation(phoneInput));
+// Валидация поля
+
+const phoneInputs = document.querySelectorAll('input[data-tel]');
+
+for (let i = 0; i < phoneInputs.length; i++) {
+  let input = phoneInputs[i];
+  input.addEventListener('input', () => {
+    input.value = input.value.replace(/[^\d]/g, '');
+  });
+}
 
 // ---------------------------------
 
@@ -155,15 +115,3 @@ phoneInputs.forEach((phoneInput) => validation(phoneInput));
 // breakpointChecker();
 
 // используйте .closest(el)
-
-// const buttonToForm = document.querySelector('.main-page__container > a');
-// // console.log(buttonToForm);
-// const form = document.querySelector('form');
-// // console.log(form);
-
-// buttonToForm.addEventListener('click', () => {
-//   form.scrollIntoView({
-//     block: 'nearest',
-//     behavior: 'smooth',
-//   });
-// });

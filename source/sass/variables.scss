@@ -4,24 +4,15 @@
 // Default
 
 $color-default-black:               #000000;
-$background-default-color:          #f8fdff;
-$color-transparent:                 rgba(255, 255, 255, 0);
-$background-color-dark:             #041827;
-$color-font-light:                  #f2f5f7;
-$color-light-blue:                  #00b2ff;
-$color-light-grey:                  #ebebeb;
-$color-hover:                       #f2f5f6;
 $color-default-white:               #ffffff;
-$color-background-field:            rgba(4, 20, 39, 0.15);
-$color-dark-blue:                   #041427;
-$color-default-white-opacity:       rgba(255, 255, 255, 0.7);
-$background-color-modal-opacity:    rgba(3, 16, 27, 0.7);
-$modal-window-background-blue:      #00b3ff;
-$color-decoration-line:             rgba(248, 253, 255, 0.7);
-$backgroundcolor-feedback-polygon:  rgba(4, 24, 39, 0.5);
-$color-toggle:                      #c4c4c4;
-$hover-button:                      #0099ff;
-$active-button:                     #157fc5;
+$color-transparent:                 rgba(255, 255, 255, 0);
+$color-font:                        #f9fbfd;
+$color-font-dark:                   #011c40;
+$color-font-opacity:                rgba(1, 28, 64, 0.7);
+$color-blue:                        #07316f;
+$color-hover:                       #ec9913;
+$background-light-blue:             #b3d9ed;
+$background-blue:                   #728ea7;
 
 // Project palette
 // для нейминга цветов используем https://www.htmlcsscolor.com/hex/334482
@@ -33,10 +24,17 @@ $color-torch-red:                   #ff1553;
 
 $black-to-right:                    linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 75%);
 
+// Typography
+// ---------------------------------
+
+// переменная используемая в html для подключения скейлинга
+$fz-default:                        16px;
+
 // у некоторых шрифтов в ios возникают проблемы с символом рубля
 // https://www.artlebedev.ru/kovodstvo/sections/159/#13
-$ff-ptmono:                         "PT Mono", "Arial", sans-serif;
-$ff-roboto:                         "Roboto Condensed", "Arial", sans-serif;
+$ff-montserrat:                         "Montserrat", "Arial", sans-serif;
+
+// $ff-placeholder:                    "Placeholder", "Arial", sans-serif;
 
 // Animation
 // ---------------------------------
@@ -52,15 +50,20 @@ $trans-600:                         0.6s $tf-default;
 // Viewports
 // ---------------------------------
 
-$vp-320:   320px;
-$vp-767:   767px;
-$vp-768:   768px;
-$vp-1023:  1023px;
-$vp-1024:  1024px;
-$vp-1220:  1220px;
-$vp-1400:  1400px;
-$vp-1600:  1600px;
-$vp-1660:  1660px;
-$vp-1750:  1750px;
-$vp-1850:  1850px;
-$vp-1920:  1920px;
+$vp-320:                            320px;
+$vp-375:                            375px;
+$vp-767:                            767px;
+$vp-768:                            768px;
+$vp-1023:                           1023px;
+$vp-1024:                           1024px;
+$vp-1147:                           1147px;
+$vp-1200:                           1200px;
+$vp-1280:                           1280px;
+$vp-1440:                           1440px;
+$vp-1920:                           1920px;
+
+// Retina
+// ---------------------------------
+
+$retina-dpi:                        144dpi;
+$retina-dppx:                       1.5dppx;

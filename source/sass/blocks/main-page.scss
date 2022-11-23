@@ -2,141 +2,101 @@
   flex-grow: 1;
 }
 
-.main-page__intro {
-  color: $color-font-light;
-  background-color: $background-color-dark;
-  background-image: linear-gradient(180deg, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%), url("../img/background-intro.webp");
+.main-page__wrap {
+  background-image: url("../img/big-main-background.png");
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 880px;
-  padding-bottom: 120px;
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+  min-height: 650px;
+  width: 100%;
+  background-color: $color-blue;
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/big-main-background@2x.webp");
+  }
 
   @media (max-width: $vp-1023) {
-    min-height: 655px;
+    min-height: 638px;
+    background-image: url("../img/small-main-background.png");
+    filter: none;
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/small-main-background@2x.webp");
+    }
   }
 
   @media (max-width: $vp-767) {
-    min-height: 610px;
-    padding-bottom: 60px;
+    min-height: 500px;
+    background-image: url("../img/big-main-background.png");
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/big-main-background@2x.webp");
+    }
   }
 }
 
 .main-page__container {
-  margin: 0 auto;
-  padding-top: 198px;
-  margin-top: -120px;
-  width: 50.5%;
-
-  @media (max-width: $vp-1600) {
-    width: 73%;
-  }
+  color: $color-font;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 270px 198px 0;
 
   @media (max-width: $vp-1023) {
-    padding: 100px 50px 0;
-    width: auto;
+    padding: 268px 45px 30px;
   }
 
   @media (max-width: $vp-767) {
-    padding: 110px 25px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    padding: 177px 15px 25px;
   }
 }
 
-.main-page__container h2 {
-  margin: 0;
-  margin-top: 105px;
-  margin-bottom: 32px;
-  font-family: $ff-roboto;
-  line-height: 94px;
-  text-transform: uppercase;
-  font-size: 80px;
+.main-page__container h1 {
   font-weight: 700;
-  letter-spacing: 0.07em;
+  font-size: 54px;
+  line-height: 66px;
+  margin: 0;
+  margin-bottom: 13px;
 
   @media (max-width: $vp-1023) {
-    font-size: 64px;
-    margin-top: 85px;
-    margin-bottom: 0;
+    font-size: 50px;
+    line-height: 61px;
   }
 
   @media (max-width: $vp-767) {
     font-size: 36px;
-    line-height: 42px;
-    margin-bottom: 19px;
-    margin-top: 90px;
+    line-height: 45px;
+    margin-bottom: 10px;
   }
 }
 
 .main-page__container p {
-  font-size: 22px;
-  line-height: 155%;
+  font-size: 20px;
+  line-height: 24px;
   margin: 0;
-  margin-bottom: 47px;
-  max-width: 675px;
 
   @media (max-width: $vp-1023) {
-    margin-top: -10px;
-    margin-bottom: 57px;
+    font-size: 18px;
+    line-height: 22px;
   }
 
   @media (max-width: $vp-767) {
-    font-size: 14px;
-    margin-bottom: 44px;
+    font-size: 16px;
+    line-height: 22px;
+    width: 70%;
   }
 }
 
-.main-page__container a {
-  padding: 16px 25px 16px 28px;
-  background-color: $color-light-blue;
-  letter-spacing: 0.05em;
-  width: 410px;
-  box-sizing: border-box;
-  user-select: none;
+.main-page__info {
+  padding: 120px 103px 145px;
 
-  &:hover {
-    background-color: $hover-button;
-  }
-
-  &:focus {
-    background-color: $hover-button;
-    border-color: none;
-  }
-
-  &:active {
-    background-color: $active-button;
-    border-color: none;
+  @media (max-width: $vp-1200) {
+    padding: 110px 73px 118px;
   }
 
   @media (max-width: $vp-1023) {
-    margin-left: 45px;
-    padding: 17px 25px;
+    padding: 95px 45px 92px;
   }
 
   @media (max-width: $vp-767) {
-    font-size: 0;
-    margin-left: 0;
-    position: relative;
-    width: 100%;
-    padding: 10px 30px;
-    max-width: 742px;
-  }
-}
-
-.main-page__container span {
-  display: none;
-
-  @media (max-width: $vp-767) {
-    display: inline;
-    font-size: 14px;
-    color: $color-font-light;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    line-height: 16px;
-    font-weight: 700;
-    font-family: $ff-roboto;
-    vertical-align: middle;
+    padding: 61px 15px 86px;
   }
 }
