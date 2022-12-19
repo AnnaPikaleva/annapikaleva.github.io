@@ -2099,7 +2099,7 @@ const swiper = () => {
       let activeSlide;
 
       if (isVirtual) {
-        activeSlide = swiper.$wrapperEl.find(`.${params.slideClass}[data-swiper-slide-index="${activeIndex}"]`);
+        activeSlide = swiper.$wrapperEl.find(`.${params.slideClass}[data-swiper-slide-index='${activeIndex}']`);
       } else {
         activeSlide = slides.eq(activeIndex);
       } // Active classes
@@ -2111,12 +2111,12 @@ const swiper = () => {
         if (activeSlide.hasClass(params.slideDuplicateClass)) {
           $wrapperEl
             .children(
-              `.${params.slideClass}:not(.${params.slideDuplicateClass})[data-swiper-slide-index="${realIndex}"]`,
+              `.${params.slideClass}:not(.${params.slideDuplicateClass})[data-swiper-slide-index='${realIndex}']`,
             )
             .addClass(params.slideDuplicateActiveClass);
         } else {
           $wrapperEl
-            .children(`.${params.slideClass}.${params.slideDuplicateClass}[data-swiper-slide-index="${realIndex}"]`)
+            .children(`.${params.slideClass}.${params.slideDuplicateClass}[data-swiper-slide-index='${realIndex}']`)
             .addClass(params.slideDuplicateActiveClass);
         }
       } // Next Slide
@@ -2140,17 +2140,17 @@ const swiper = () => {
         if (nextSlide.hasClass(params.slideDuplicateClass)) {
           $wrapperEl
             .children(
-              `.${params.slideClass}:not(.${params.slideDuplicateClass})[data-swiper-slide-index="${nextSlide.attr(
+              `.${params.slideClass}:not(.${params.slideDuplicateClass})[data-swiper-slide-index='${nextSlide.attr(
                 'data-swiper-slide-index',
-              )}"]`,
+              )}']`,
             )
             .addClass(params.slideDuplicateNextClass);
         } else {
           $wrapperEl
             .children(
-              `.${params.slideClass}.${params.slideDuplicateClass}[data-swiper-slide-index="${nextSlide.attr(
+              `.${params.slideClass}.${params.slideDuplicateClass}[data-swiper-slide-index='${nextSlide.attr(
                 'data-swiper-slide-index',
-              )}"]`,
+              )}']`,
             )
             .addClass(params.slideDuplicateNextClass);
         }
@@ -2158,17 +2158,17 @@ const swiper = () => {
         if (prevSlide.hasClass(params.slideDuplicateClass)) {
           $wrapperEl
             .children(
-              `.${params.slideClass}:not(.${params.slideDuplicateClass})[data-swiper-slide-index="${prevSlide.attr(
+              `.${params.slideClass}:not(.${params.slideDuplicateClass})[data-swiper-slide-index='${prevSlide.attr(
                 'data-swiper-slide-index',
-              )}"]`,
+              )}']`,
             )
             .addClass(params.slideDuplicatePrevClass);
         } else {
           $wrapperEl
             .children(
-              `.${params.slideClass}.${params.slideDuplicateClass}[data-swiper-slide-index="${prevSlide.attr(
+              `.${params.slideClass}.${params.slideDuplicateClass}[data-swiper-slide-index='${prevSlide.attr(
                 'data-swiper-slide-index',
-              )}"]`,
+              )}']`,
             )
             .addClass(params.slideDuplicatePrevClass);
         }
@@ -2869,7 +2869,7 @@ const swiper = () => {
             swiper.loopFix();
             slideToIndex = $wrapperEl
               .children(
-                `.${params.slideClass}[data-swiper-slide-index="${realIndex}"]:not(.${params.slideDuplicateClass})`,
+                `.${params.slideClass}[data-swiper-slide-index='${realIndex}']:not(.${params.slideDuplicateClass})`,
               )
               .eq(0)
               .index();
@@ -2883,7 +2883,7 @@ const swiper = () => {
           swiper.loopFix();
           slideToIndex = $wrapperEl
             .children(
-              `.${params.slideClass}[data-swiper-slide-index="${realIndex}"]:not(.${params.slideDuplicateClass})`,
+              `.${params.slideClass}[data-swiper-slide-index='${realIndex}']:not(.${params.slideDuplicateClass})`,
             )
             .eq(0)
             .index();
@@ -4798,7 +4798,7 @@ const swiper = () => {
 
         const $slideEl = params.renderSlide
           ? $(params.renderSlide.call(swiper, slide, index))
-          : $(`<div class="${swiper.params.slideClass}" data-swiper-slide-index="${index}">${slide}</div>`);
+          : $(`<div class='${swiper.params.slideClass}' data-swiper-slide-index='${index}'>${slide}</div>`);
         if (!$slideEl.attr('data-swiper-slide-index')) $slideEl.attr('data-swiper-slide-index', index);
         if (params.cache) swiper.virtual.cache[index] = $slideEl;
         return $slideEl;
@@ -4894,7 +4894,7 @@ const swiper = () => {
         } else {
           for (let i = previousFrom; i <= previousTo; i += 1) {
             if (i < from || i > to) {
-              swiper.$wrapperEl.find(`.${swiper.params.slideClass}[data-swiper-slide-index="${i}"]`).remove();
+              swiper.$wrapperEl.find(`.${swiper.params.slideClass}[data-swiper-slide-index='${i}']`).remove();
             }
           }
         }
@@ -6087,7 +6087,7 @@ const swiper = () => {
             if (params.renderBullet) {
               paginationHTML += params.renderBullet.call(swiper, i, params.bulletClass);
             } else {
-              paginationHTML += `<${params.bulletElement} class="${params.bulletClass}"></${params.bulletElement}>`;
+              paginationHTML += `<${params.bulletElement} class='${params.bulletClass}'></${params.bulletElement}>`;
             }
           }
 
@@ -6100,7 +6100,7 @@ const swiper = () => {
             paginationHTML = params.renderFraction.call(swiper, params.currentClass, params.totalClass);
           } else {
             paginationHTML =
-              `<span class="${params.currentClass}"></span>` + ' / ' + `<span class="${params.totalClass}"></span>`;
+              `<span class='${params.currentClass}'></span>` + ' / ' + `<span class='${params.totalClass}'></span>`;
           }
 
           $el.html(paginationHTML);
@@ -6110,7 +6110,7 @@ const swiper = () => {
           if (params.renderProgressbar) {
             paginationHTML = params.renderProgressbar.call(swiper, params.progressbarFillClass);
           } else {
-            paginationHTML = `<span class="${params.progressbarFillClass}"></span>`;
+            paginationHTML = `<span class='${params.progressbarFillClass}'></span>`;
           }
 
           $el.html(paginationHTML);
@@ -6557,7 +6557,7 @@ const swiper = () => {
         let $dragEl = $el.find(`.${swiper.params.scrollbar.dragClass}`);
 
         if ($dragEl.length === 0) {
-          $dragEl = $(`<div class="${swiper.params.scrollbar.dragClass}"></div>`);
+          $dragEl = $(`<div class='${swiper.params.scrollbar.dragClass}'></div>`);
           $el.append($dragEl);
         }
 
@@ -7389,7 +7389,7 @@ const swiper = () => {
         if (swiper.slides.length === 0) return;
         const isVirtual = swiper.virtual && swiper.params.virtual.enabled;
         const $slideEl = isVirtual
-          ? swiper.$wrapperEl.children(`.${swiper.params.slideClass}[data-swiper-slide-index="${index}"]`)
+          ? swiper.$wrapperEl.children(`.${swiper.params.slideClass}[data-swiper-slide-index='${index}']`)
           : swiper.slides.eq(index);
         const $images = $slideEl.find(
           `.${params.elementClass}:not(.${params.loadedClass}):not(.${params.loadingClass})`,
@@ -7423,7 +7423,7 @@ const swiper = () => {
               return;
 
             if (background) {
-              $imageEl.css('background-image', `url("${background}")`);
+              $imageEl.css('background-image', `url('${background}')`);
               $imageEl.removeAttr('data-background');
             } else {
               if (srcset) {
@@ -7461,12 +7461,12 @@ const swiper = () => {
 
               if ($slideEl.hasClass(swiper.params.slideDuplicateClass)) {
                 const originalSlide = swiper.$wrapperEl.children(
-                  `[data-swiper-slide-index="${slideOriginalIndex}"]:not(.${swiper.params.slideDuplicateClass})`,
+                  `[data-swiper-slide-index='${slideOriginalIndex}']:not(.${swiper.params.slideDuplicateClass})`,
                 );
                 loadInSlide(originalSlide.index(), false);
               } else {
                 const duplicatedSlide = swiper.$wrapperEl.children(
-                  `.${swiper.params.slideDuplicateClass}[data-swiper-slide-index="${slideOriginalIndex}"]`,
+                  `.${swiper.params.slideDuplicateClass}[data-swiper-slide-index='${slideOriginalIndex}']`,
                 );
                 loadInSlide(duplicatedSlide.index(), false);
               }
@@ -7494,7 +7494,7 @@ const swiper = () => {
 
         function slideExist(index) {
           if (isVirtual) {
-            if ($wrapperEl.children(`.${swiperParams.slideClass}[data-swiper-slide-index="${index}"]`).length) {
+            if ($wrapperEl.children(`.${swiperParams.slideClass}[data-swiper-slide-index='${index}']`).length) {
               return true;
             }
           } else if (slides[index]) return true;
@@ -8115,7 +8115,7 @@ const swiper = () => {
 
       on('beforeInit', () => {
         liveRegion = $(
-          `<span class="${swiper.params.a11y.notificationClass}" aria-live="assertive" aria-atomic="true"></span>`,
+          `<span class='${swiper.params.a11y.notificationClass}' aria-live='assertive' aria-atomic='true'></span>`,
         );
       });
       on('afterInit', () => {
@@ -8322,7 +8322,7 @@ const swiper = () => {
         const activeSlideHash = swiper.slides.eq(swiper.activeIndex).attr('data-hash');
 
         if (newHash !== activeSlideHash) {
-          const newIndex = swiper.$wrapperEl.children(`.${swiper.params.slideClass}[data-hash="${newHash}"]`).index();
+          const newIndex = swiper.$wrapperEl.children(`.${swiper.params.slideClass}[data-hash='${newHash}']`).index();
           if (typeof newIndex === 'undefined') return;
           swiper.slideTo(newIndex);
         }
@@ -8652,12 +8652,12 @@ const swiper = () => {
 
           const prevIndex = swiper.slides
             .eq(currentIndex)
-            .prevAll(`[data-swiper-slide-index="${slideToIndex}"]`)
+            .prevAll(`[data-swiper-slide-index='${slideToIndex}']`)
             .eq(0)
             .index();
           const nextIndex = swiper.slides
             .eq(currentIndex)
-            .nextAll(`[data-swiper-slide-index="${slideToIndex}"]`)
+            .nextAll(`[data-swiper-slide-index='${slideToIndex}']`)
             .eq(0)
             .index();
           if (typeof prevIndex === 'undefined') slideToIndex = nextIndex;
@@ -8725,12 +8725,12 @@ const swiper = () => {
 
             const prevThumbsIndex = thumbsSwiper.slides
               .eq(currentThumbsIndex)
-              .prevAll(`[data-swiper-slide-index="${swiper.realIndex}"]`)
+              .prevAll(`[data-swiper-slide-index='${swiper.realIndex}']`)
               .eq(0)
               .index();
             const nextThumbsIndex = thumbsSwiper.slides
               .eq(currentThumbsIndex)
-              .nextAll(`[data-swiper-slide-index="${swiper.realIndex}"]`)
+              .nextAll(`[data-swiper-slide-index='${swiper.realIndex}']`)
               .eq(0)
               .index();
 
@@ -8786,7 +8786,7 @@ const swiper = () => {
         if (thumbsSwiper.params.loop || (thumbsSwiper.params.virtual && thumbsSwiper.params.virtual.enabled)) {
           for (let i = 0; i < thumbsToActivate; i += 1) {
             thumbsSwiper.$wrapperEl
-              .children(`[data-swiper-slide-index="${swiper.realIndex + i}"]`)
+              .children(`[data-swiper-slide-index='${swiper.realIndex + i}']`)
               .addClass(thumbActiveClass);
           }
         } else {

@@ -1,0 +1,148 @@
+.block-gym__container {
+  padding: 120px 103px 235px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 85px;
+  position: relative;
+
+  @media (max-width: $vp-1199) {
+    padding: 60px 45px 183px;
+    flex-direction: column;
+    gap: 41px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media (max-width: $vp-767) {
+    padding: 64px 0 70px;
+    position: static;
+    align-items: flex-start;
+    gap: 33px;
+  }
+}
+
+.block-gym__info {
+  padding-left: 60px;
+
+  @media (max-width: $vp-1199) {
+    padding-left: 0;
+    text-align: center;
+  }
+
+  @media (max-width: $vp-767) {
+    padding: 0 15px;
+    text-align: left;
+  }
+}
+
+.block-gym__info h2 {
+  font-family: $ff-alumni;
+  font-size: 48px;
+  line-height: 58px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  margin: 0;
+  margin-top: 40px;
+  margin-bottom: 6px;
+
+  @media (max-width: $vp-1199) {
+    font-size: 42px;
+    line-height: 50px;
+    margin-bottom: 0;
+    margin-left: -14px;
+  }
+
+  @media (max-width: $vp-767) {
+    text-align: left;
+    font-size: 32px;
+    line-height: 38px;
+    margin: 0;
+    margin-bottom: 5px;
+    padding: 0;
+  }
+}
+
+.block-gym__info p {
+  &:first-of-type {
+    margin-bottom: 39px;
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: 400;
+  }
+
+  max-width: 355px;
+  font-weight: 300;
+  margin: 0;
+
+  @media (max-width: $vp-1199) {
+    max-width: 579px;
+
+    &:first-of-type {
+      margin-bottom: 35px;
+    }
+  }
+
+  @media (max-width: $vp-767) {
+    max-width: none;
+
+    &:first-of-type {
+      margin-bottom: 23px;
+    }
+  }
+}
+
+.block-gym__img {
+  width: 660px;
+
+  @media (max-width: $vp-1199) {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+.block-gym__img img {
+  object-fit: cover;
+  width: 100%;
+
+  @media (max-width: $vp-1199) {
+    aspect-ratio: 678/345;
+  }
+
+  @media (max-width: $vp-767) {
+    aspect-ratio: 320/313;
+  }
+}
+
+.block-gym__link {
+  display: block;
+  position: absolute;
+  width: 26.6%;
+  height: 0;
+  padding-bottom: 18.25%;
+  top: 54.2%;
+  right: 33.8%;
+
+  @media (max-width: $vp-1199) {
+    width: 34.5%;
+    top: 69%;
+    right: 33%;
+  }
+
+  @media (max-width: $vp-767) {
+    position: static;
+    width: 100%;
+    margin-top: 8px;
+    padding-bottom: 51.8%;
+  }
+}
+
+.block-gym__info .block-gym__subtext {
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: 7px;
+
+  @media (max-width: $vp-1199) {
+    display: none;
+  }
+}

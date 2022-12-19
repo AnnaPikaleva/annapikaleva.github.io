@@ -1,136 +1,62 @@
-.field {
-  display: flex;
-  flex-direction: column;
-  gap: 19px;
-}
-
 .field input {
-  min-height: 43px;
-  width: 100%;
-  padding: 11px 16px;
-  cursor: pointer;
-  color: $color-font-dark;
-  font-size: 14px;
-  line-height: 21px;
+  font-family: $ff-roboto;
+  color: $color-default-white;
+  background-color: transparent;
   border: none;
-  margin-bottom: 1px;
-
-  &::placeholder {
-    font-size: 14px;
-    color: $color-font-opacity;
-  }
+  font-size: 14px;
+  line-height: 16px;
+  padding-bottom: 7px;
+  margin-left: -2px;
+  border-bottom: 1px solid #74819c;
+  width: 100%;
+  max-width: 200px;
 
   &:hover {
-    outline: 3px solid $color-hover;
-    box-shadow: 0 2px 3px $color-hover;
+    border-bottom: 1px solid $color-red-line;
   }
 
   &:focus {
-    outline: 3px solid $color-hover;
-    box-shadow: 0 2px 3px $color-hover;
+    border-bottom: 1px solid $color-red-line;
+    outline: none;
   }
-}
 
-.field__checkbox {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  position: relative;
-  margin-bottom: 10px;
-  margin-top: -4px;
-
-  @media (max-width: $vp-1023) {
-    margin-bottom: 9px;
+  @media (max-width: $vp-1199) {
+    max-width: 208px;
+    padding-bottom: 6px;
   }
 
   @media (max-width: $vp-767) {
-    margin-top: -1px;
-    // align-items: flex-start;
+    max-width: none;
   }
-}
-
-.field input[type="checkbox"] {
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  left: 0;
-  width: 18px;
-  height: 18px;
-  min-height: 14px;
-}
-
-.field span {
-  &:last-of-type {
-    font-size: 10px;
-    line-height: 13px;
-    color: $color-font;
-    vertical-align: middle;
-    display: inline-block;
-    padding-left: 23px;
-
-    @media (max-width: $vp-767) {
-      letter-spacing: 0;
-      line-height: 12px;
-      text-align: left;
-      padding-left: 28px;
-    }
-  }
-}
-
-.field__control-mark {
-  width: 18px;
-  height: 18px;
-  position: absolute;
-  top: 4px;
-  left: 0;
-  background-color: $color-font;
-  cursor: pointer;
-
-  &:hover,
-  &:focus {
-    outline: 3px solid $color-hover;
-    box-shadow: 0 2px 3px $color-hover;
-  }
-
-  @media (max-width: $vp-767) {
-    width: 20px;
-    height: 20px;
-    top: 2px;
-  }
-}
-
-.field input[type="checkbox"]:checked + span {
-  &::before {
-    content: "";
-    position: absolute;
-    top: 6px;
-    left: 4px;
-    width: 10px;
-    height: 6px;
-    background-image: url("../img/svg/check.svg");
-    background-repeat: no-repeat;
-    background-size: 100%;
-  }
-}
-
-.field__checkbox input:focus + span {
-  outline: 3px solid $color-hover;
-  box-shadow: 0 2px 3px $color-hover;
 }
 
 .field button {
-  color: $color-font-dark;
-  background-color: $color-font;
-  min-height: 41px;
-  font-weight: 600;
+  font-family: $ff-roboto;
+  grid-column: 1/3;
+  padding: 15px 45px;
   font-size: 14px;
-  line-height: 21px;
+  line-height: 16px;
+  letter-spacing: 0.05em;
+  background-color: transparent;
+  border: 3px solid $color-default-white;
+  color: $color-default-white;
+  width: 410px;
   text-align: center;
-  cursor: pointer;
-  border: none;
+  text-transform: uppercase;
 
   &:hover,
   &:focus {
-    background-color: $color-hover;
+    background-image: linear-gradient(97.05deg, #ed0233 17.6%, #003eb7 95.31%);
+    color: $color-default-white;
+  }
+
+  @media (max-width: $vp-1199) {
+    padding-bottom: 16px 45px 15px;
+    width: 94%;
+  }
+
+  @media (max-width: $vp-767) {
+    width: 100%;
+    margin-top: 10px;
   }
 }

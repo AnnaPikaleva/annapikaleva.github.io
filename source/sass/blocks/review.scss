@@ -1,0 +1,53 @@
+.review {
+  display: flex;
+  padding: 59px 103px 121px;
+  align-items: center;
+
+  @media (max-width: $vp-1199) {
+    padding: 43px 45px 102px;
+  }
+
+  @media (max-width: $vp-767) {
+    padding: 35px 15px 70px;
+  }
+}
+
+.review__container {
+  position: relative;
+  width: 48.3%;
+  max-width: 640px;
+  align-items: center;
+
+  @media (max-width: $vp-1199) {
+    width: 83.4%;
+  }
+
+  @media (max-width: $vp-767) {
+    width: 78%;
+  }
+}
+
+.review__container h2 {
+  font-family: $ff-alumni;
+  font-size: 54px;
+  line-height: 65px;
+  letter-spacing: 0.03em;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 37px;
+  padding-left: 10px;
+
+  @media (max-width: $vp-1199) {
+    font-size: 42px;
+    line-height: 50px;
+    padding-left: 0;
+    margin-left: -4px;
+    margin-bottom: 39px;
+  }
+
+  @media (max-width: $vp-767) {
+    font-size: 32px;
+    line-height: 38px;
+    margin-bottom: 42px;
+  }
+}

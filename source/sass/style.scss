@@ -3,7 +3,7 @@
 
 // @import "vendor/normalize";
 // Swiper 7.4.1
-// @import "vendor/swiper";
+@import "vendor/swiper.scss";
 
 // Global
 // ---------------------------------
@@ -18,27 +18,38 @@
 // Blocks
 // ---------------------------------
 
-@import "blocks/main-page.scss";
-@import "blocks/main-header.scss";
-@import "blocks/navigation.scss";
-@import "blocks/about-trip.scss";
-@import "blocks/advantages.scss";
-@import "blocks/catalog.scss";
-@import "blocks/form.scss";
-@import "blocks/field.scss";
-@import "blocks/contacts.scss";
-@import "blocks/map.scss";
-@import "blocks/main-footer.scss";
+@import "blocks/button.scss";
+@import "blocks/video.scss";
 @import "blocks/social.scss";
-@import "blocks/site-list.scss";
-@import "blocks/navigation-footer.scss";
+@import "blocks/main-page.scss";
+@import "blocks/header.scss";
+@import "blocks/block-gym.scss";
+@import "blocks/intro.scss";
+@import "blocks/membership.scss";
+@import "blocks/tabs.scss";
+@import "blocks/cards.scss";
+@import "blocks/event.scss";
+@import "blocks/coaches.scss";
+@import "blocks/slider.scss";
+@import "blocks/advantages.scss";
+@import "blocks/offer.scss";
+@import "blocks/review.scss";
+@import "blocks/carousel.scss";
+@import "blocks/index-columns.scss";
+@import "blocks/form.scss";
+@import "blocks/contacts.scss";
+@import "blocks/field.scss";
+@import "blocks/footer.scss";
 @import "blocks/nojs.scss";
+@import "blocks/swiper-button.scss";
+
 
 // ---------------------------------
 
 // ❗❗❗ запрещено использовать изображения в css, касается как jpg \ png, так и svg
 
 // ❗ обязательно используйте mixin hover-focus для отключения ховеров на тач устройствах
+
 // адаптив пишем внутри каждого класса (смотрим container.scss)
 
 // для фикса проблем с vh на iOS в сборке подключен скрипт

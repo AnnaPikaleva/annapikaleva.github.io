@@ -1,5 +1,7 @@
 import {iosVhFix} from './utils/ios-vh-fix';
 import {initModals} from './modules/modals/init-modals';
+// import './vendor.js';
+import {coachesSlider, reviewCarousel} from './vendor.js';
 
 // ---------------------------------
 
@@ -9,9 +11,6 @@ window.addEventListener('DOMContentLoaded', () => {
   // ---------------------------------
 
   iosVhFix();
-  changesMenu();
-  closeMenuLink();
-  closeMenu();
 
   // Modules
   // ---------------------------------
@@ -20,67 +19,108 @@ window.addEventListener('DOMContentLoaded', () => {
   // в load следует добавить скрипты, не участвующие в работе первого экрана
   window.addEventListener('load', () => {
     initModals();
+    // sliderCoaches();
+    coachesSlider();
+    reviewCarousel();
+    findVideos();
+    moveToBlock();
   });
 });
 
-// Открытие/закрытие меню
-
-const navList = document.querySelector('.site-list');
-const menuOverlay = document.querySelector('.main-header__menu-overlay');
-
 document.querySelectorAll('.nojs').forEach((item) => item.classList.remove('nojs'));
-
-const changesMenu = () => {
-  const logoImg = document.querySelector('.main-header__logo');
-  const navButton = document.querySelector('.navigation__button');
-
-  navButton.addEventListener('click', function () {
-    navButton.classList.toggle('is-active');
-    navList.classList.toggle('is-active');
-    logoImg.classList.toggle('is-active');
-    document.body.classList.toggle('is-active');
-    menuOverlay.classList.toggle('is-active');
-  });
-};
-
-const closeMenu = () => {
-  menuOverlay.addEventListener('click', () => {
-    const activeItems = document.querySelectorAll('.is-active');
-    activeItems.forEach((item) => {
-      item.classList.remove('is-active');
-    });
-  });
-};
-
-const closeMenuLink = () => {
-  const links = document.querySelectorAll('[data-link]');
-
-  links.forEach((link) => {
-    link.addEventListener('click', () => {
-      const activeItems = document.querySelectorAll('.is-active');
-      activeItems.forEach((item) => {
-        item.classList.remove('is-active');
-      });
-    });
-  });
-};
 
 // Move to block
 
-const anchors = document.querySelectorAll('a[href*="#"]');
+const moveToBlock = () => {
+  const button = document.querySelector('.intro__wrapper > a');
+  const block = document.querySelector('.membership');
 
-for (let anchor of anchors) {
-  anchor.addEventListener('click', function (event) {
+  button.addEventListener('click', function (event) {
     event.preventDefault();
-    const blockID = anchor.getAttribute('href');
-    document.querySelector('' + blockID).scrollIntoView({
+    block.scrollIntoView({
+      block: 'nearest',
       behavior: 'smooth',
-      block: 'start',
     });
+  });
+};
+
+// Tabs
+
+const triggers = document.querySelectorAll('.tabs__item');
+const tabsItems = document.querySelectorAll('.tabs__block');
+
+triggers.forEach(onTabClick);
+
+function onTabClick(item) {
+  item.addEventListener('click', function (event) {
+    event.preventDefault();
+    let currentTrigger = item;
+    let tabId = currentTrigger.getAttribute('data-tab');
+    let currentTab = document.querySelector(tabId);
+
+    if (!currentTrigger.classList.contains('tabs__item--active')) {
+      triggers.forEach((child) => child.classList.remove('tabs__item--active'));
+      tabsItems.forEach((child) => child.classList.remove('tabs__block--active'));
+
+      currentTrigger.classList.add('tabs__item--active');
+      currentTab.classList.add('tabs__block--active');
+    }
   });
 }
 
-// Валидация поля
+document.querySelector('.tabs__item').click();
+
+// Video
+
+function findVideos() {
+  const videos = document.querySelectorAll('.video');
+
+  for (let i = 0; i < videos.length; i++) {
+    setupVideo(videos[i]);
+  }
+}
+
+function setupVideo(video) {
+  let link = video.querySelector('.video__link');
+  let button = video.querySelector('.video__button');
+  let id = parseMediaURL();
+
+  video.addEventListener('click', () => {
+    let iframe = createIframe(id);
+
+    link.remove();
+    button.remove();
+    video.appendChild(iframe);
+  });
+
+  link.removeAttribute('href');
+}
+
+function parseMediaURL() {
+  let regexp = /https:\/\/(?:youtu\.be\/|(?:[a-z]{2,3}\.)?youtube\.com\/watch(?:\?|#\!)v=)([\w-]{11}).*/gi;
+  let match = regexp.exec(document.querySelector('.video__link').href)[1];
+
+  return match;
+}
+
+function createIframe(id) {
+  let iframe = document.createElement('iframe');
+
+  iframe.setAttribute('allowfullscreen', '');
+  iframe.setAttribute('allow', 'autoplay');
+  iframe.setAttribute('src', generateURL(id));
+  iframe.classList.add('video__media');
+
+  return iframe;
+}
+
+function generateURL(id) {
+  let query = '?autoplay=1';
+
+  return 'https://www.youtube.com/embed/' + id + query;
+}
+
+// Validate
 
 const phoneInputs = document.querySelectorAll('input[data-tel]');
 
@@ -90,6 +130,28 @@ for (let i = 0; i < phoneInputs.length; i++) {
     input.value = input.value.replace(/[^\d]/g, '');
   });
 }
+
+// Click on slider card
+
+const madiaQuery = window.matchMedia('(max-width: 1199px)');
+
+function handleChange(e) {
+  if (e.matches) {
+    const sliderCards = document.querySelectorAll('.slider__item');
+    sliderCards.forEach((card) => {
+      card.classList.remove('slider__item--hover');
+      card.addEventListener('click', () => {
+        const subitemCard = card.querySelector('.slider__subitem');
+        subitemCard.classList.toggle('slider__subitem--active');
+        card.classList.toggle('slider__item--active');
+      });
+    });
+  }
+}
+
+madiaQuery.addEventListener('change', handleChange);
+handleChange(madiaQuery);
+
 
 // ---------------------------------
 

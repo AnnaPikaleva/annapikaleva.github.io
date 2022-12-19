@@ -1,0 +1,60 @@
+.membership {
+  background-color: $backgroundcolor-light-gray;
+  scroll-behavior: smooth;
+  position: relative;
+}
+
+.membership__container {
+  padding: 120px 47px 80px;
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: $vp-1199) {
+    padding: 100px 163px;
+    align-items: stretch;
+  }
+
+  @media (max-width: $vp-767) {
+    padding: 65px 15px 70px;
+    align-items: stretch;
+  }
+}
+
+.membership__container h2 {
+  font-family: $ff-alumni;
+  font-weight: 600;
+  font-size: 54px;
+  line-height: 65px;
+  letter-spacing: 0.03em;
+  margin: 0;
+  margin-bottom: 17px;
+  text-align: center;
+
+  @media (max-width: $vp-1199) {
+    font-size: 42px;
+    line-height: 50px;
+    margin-left: -13px;
+    margin-bottom: 21px;
+  }
+
+  @media (max-width: $vp-767) {
+    font-size: 32px;
+    line-height: 38px;
+  }
+}
+
+.membership__img {
+  object-fit: cover;
+  position: absolute;
+  bottom: -153px;
+  right: 0;
+
+  @media (max-width: $vp-1199) {
+    width: 341px;
+    bottom: -124px;
+  }
+
+  @media (max-width: $vp-767) {
+    display: none;
+  }
+}

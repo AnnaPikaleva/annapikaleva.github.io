@@ -1,0 +1,141 @@
+.cards__item {
+  width: 31%;
+  min-width: 300px;
+  max-width: 360px;
+  min-height: 448px;
+  background-color: $color-default-white;
+  padding: 55px 35px;
+  box-sizing: border-box;
+  text-align: center;
+  margin-bottom: 40px;
+  border: 7px solid transparent;
+  z-index: 1;
+  cursor: pointer;
+
+  &:hover {
+    border: 7px solid;
+    border-image-source: linear-gradient(148.82deg, #d10a42 0.85%, #00359f 100%);
+    border-image-slice: 1;
+  }
+
+  &:hover .cards__button {
+    background-image: linear-gradient(97.05deg, #ed0233 17.6%, #003eb7 95.31%);
+    border: none;
+    color: $color-default-white;
+  }
+
+  @media (max-width: $vp-1199) {
+    width: 100%;
+    padding: 57px 35px 53px;
+    margin-bottom: 0;
+    max-width: none;
+  }
+
+  @media (max-width: $vp-767) {
+    min-width: 290px;
+    min-height: 384px;
+    padding: 43px 35px;
+  }
+}
+
+.cards__item h3 {
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 29px;
+  margin: 0;
+  margin-bottom: 10px;
+
+  @media (max-width: $vp-767) {
+    font-size: 22px;
+    line-height: 24px;
+    margin-bottom: 10px;
+  }
+}
+
+.cards__item span {
+  color: $color-dark-blue;
+}
+
+.cards__wrap-price-shadow {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 33px;
+
+  @media (max-width: $vp-767) {
+    margin-bottom: 29px;
+  }
+}
+
+.cards__wrap-price-shadow p {
+  color: $color-bright-blue;
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 90px;
+  margin: 0;
+  margin-top: -94px;
+  margin-left: 3px;
+  padding-right: 45px;
+  z-index: 1;
+  position: relative;
+
+  &:first-of-type {
+    color: $color-price-shadow;
+    font-size: 100px;
+    font-weight: 700;
+    line-height: 150px;
+    opacity: 0.48;
+    position: static;
+    margin: 0;
+    padding: 0;
+  }
+
+  @media (max-width: $vp-767) {
+    font-size: 48px;
+    line-height: 72px;
+    margin-top: -77px;
+    margin-left: 2px;
+    padding-right: 35px;
+
+    &:first-of-type {
+      font-size: 80px;
+      line-height: 120px;
+      padding: 0;
+    }
+  }
+}
+
+.cards__item svg {
+  position: absolute;
+  bottom: 24px;
+  right: 0;
+  z-index: 2;
+
+  @media (max-width: $vp-767) {
+    width: 24px;
+    height: 33px;
+    bottom: 18px;
+  }
+}
+
+.cards__button {
+  display: block;
+  color: $color-font-dark;
+  border: 2px solid $color-font-dark;
+  padding: 24px 44px;
+  width: 76%;
+  margin: 0 auto;
+
+  @media (max-width: $vp-1199) {
+    width: 58.5%;
+    padding: 25px 44px 24px;
+  }
+
+  @media (max-width: $vp-767) {
+    padding: 26px 25px 24px;
+    width: 100%;
+    margin: 0;
+  }
+}

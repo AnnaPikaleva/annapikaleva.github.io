@@ -1,0 +1,48 @@
+.coaches {
+  display: flex;
+  justify-content: center;
+  padding: 53px 40px 91px;
+
+  @media (max-width: $vp-1199) {
+    padding: 50px 68px 100px;
+  }
+
+  @media (max-width: $vp-767) {
+    padding: 30px 47px 70px;
+  }
+}
+
+.coaches__container {
+  position: relative;
+  width: 90%;
+  max-width: 1160px;
+  align-items: center;
+
+  @media (max-width: $vp-767) {
+    width: 100%;
+  }
+}
+
+.coaches__container h2 {
+  font-family: $ff-alumni;
+  font-size: 54px;
+  line-height: 65px;
+  letter-spacing: 0.03em;
+  font-weight: 600;
+  margin: 0;
+  margin-bottom: 48px;
+
+  @media (max-width: $vp-1199) {
+    font-size: 42px;
+    line-height: 50px;
+    text-align: center;
+    margin-left: -5px;
+    margin-bottom: 31px;
+  }
+
+  @media (max-width: $vp-767) {
+    font-size: 32px;
+    line-height: 38px;
+    margin-bottom: 43px;
+  }
+}

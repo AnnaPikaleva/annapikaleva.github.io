@@ -1,142 +1,126 @@
 .contacts {
-  padding: 120px 103px 114px;
+  padding-left: 25%;
 
-  @media (max-width: $vp-1280) {
-    padding: 120px 73px 114px;
-  }
-
-  @media (max-width: $vp-1023) {
-    padding: 100px 45px 93px;
+  @media (max-width: $vp-1199) {
+    padding: 0;
+    padding-top: 26%;
   }
 
   @media (max-width: $vp-767) {
-    padding: 59px 15px 67px;
+    padding: 65px 15px 63px;
   }
 }
 
-.contacts__container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 45px;
-  align-items: center;
+.contacts h2 {
+  font-weight: 600;
+  font-family: $ff-alumni;
+  font-size: 54px;
+  line-height: 70px;
+  letter-spacing: 0.03em;
+  margin: 0;
+  margin-bottom: 34px;
 
-  @media (max-width: $vp-1200) {
-    gap: 30px;
+  @media (max-width: $vp-1199) {
+    font-size: 42px;
+    line-height: 50px;
+    margin-bottom: 32px;
   }
 
-  @media (max-width: $vp-1023) {
-    gap: 30px;
-    align-items: flex-start;
+  @media (max-width: $vp-767) {
+    margin-bottom: 33px;
+    font-size: 32px;
+    line-height: 38px;
+  }
+}
+
+.contacts__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  padding-left: 3px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  column-gap: 120px;
+  row-gap: 15px;
+  position: relative;
+
+  &::before {
+    content: "";
+    width: 22.6%;
+    height: 1px;
+    background-color: $color-line-blue;
+    position: absolute;
+    bottom: 51%;
+    left: 40%;
+    transform: rotate(90deg);
+  }
+
+  @media (max-width: $vp-1199) {
+    margin-left: -3px;
+    column-gap: 96px;
+    row-gap: 20px;
+
+    &::before {
+      width: 25.6%;
+      left: 40.5%;
+    }
   }
 
   @media (max-width: $vp-767) {
     display: flex;
     flex-direction: column;
-    gap: 0;
+    gap: 20px;
+
+    &::before {
+      display: none;
+    }
   }
-}
-
-.contacts__info {
-  padding-left: 58px;
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-
-  @media (max-width: $vp-1200) {
-    padding-left: 38px;
-  }
-
-  @media (max-width: $vp-1023) {
-    gap: 0;
-    padding: 0;
-  }
-
-  @media (max-width: $vp-767) {
-    margin-bottom: 33px;
-  }
-}
-
-.contacts__info p {
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 27px;
-  margin: 0;
-  margin-top: 15px;
-  max-width: 500px;
-
-  @media (max-width: $vp-1023) {
-    margin-bottom: 28px;
-    padding-top: 50px;
-  }
-
-  @media (max-width: $vp-767) {
-    margin-top: 0;
-    padding-top: 0;
-  }
-}
-
-.contacts__list ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  font-style: normal;
 }
 
 .contacts__item {
-  padding-left: 28px;
-  position: relative;
-  margin-bottom: 23px;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 18px;
-    height: 22px;
-    background-image: url("../img/svg/pin.svg");
-    background-repeat: no-repeat;
-    background-size: 100%;
-  }
-
-  &--tel {
-    &::before {
-      background-image: url("../img/svg/phone.svg");
-      height: 18px;
-    }
-  }
-
-  &--tel a {
-    &:hover,
-    &:focus {
-      color: $color-hover;
-    }
-  }
-
-  @media (max-width: $vp-1023) {
-    margin-bottom: 20px;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-
-    &::before {
-      top: 5px;
-      left: 0;
-    }
-
+  @media (max-width: $vp-1199) {
     &--tel {
-      &::before {
-        top: 2px;
-      }
+      grid-column: 2/3;
+      grid-row: 1/2;
     }
   }
 }
 
-.contacts__item br {
-  display: none;
+.contacts__item h3 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 3px;
 
-  @media (max-width: $vp-1023) {
-    display: inline;
+  @media (max-width: $vp-1199) {
+    font-size: 20px;
+    line-height: 30px;
+    margin-bottom: 5px;
+  }
+}
+
+.contacts__item p,
+.contacts__item a {
+  margin: 0;
+  font-size: 14px;
+  line-height: 21px;
+
+  @media (max-width: $vp-1199) {
+    font-size: 18px;
+    line-height: 27px;
+  }
+}
+
+.contacts__item a {
+  cursor: pointer;
+
+  &:hover {
+    color: $color-red-line;
+  }
+
+  &:focus {
+    outline: none;
+    color: $color-red-line;
   }
 }

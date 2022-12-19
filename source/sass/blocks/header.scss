@@ -1,0 +1,76 @@
+.header {
+  position: absolute;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  background-color: transparent;
+  min-width: 320px;
+}
+
+.header__nav {
+  padding: 30px 103px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  @media (max-width: $vp-1199) {
+    padding: 33px 45px 0 45px;
+  }
+
+  @media (max-width: $vp-767) {
+    padding: 15px;
+  }
+}
+
+.header__logo {
+  display: block;
+  margin-top: 10px;
+
+  @media (max-width: $vp-1199) {
+    margin-top: 8px;
+  }
+
+  @media (max-width: $vp-767) {
+    margin-top: 5px;
+    width: 69px;
+    height: 24px;
+  }
+}
+
+.header__logo img {
+  @media (max-width: $vp-1199) {
+    width: 82px;
+    height: 17px;
+  }
+}
+
+.header__tel {
+  font-family: $ff-alumni;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 31px;
+  color: $color-default-white;
+  letter-spacing: 0.03em;
+
+  &:hover {
+    color: $color-card;
+    text-shadow: $color-default-white 1px 0 10px;
+  }
+
+  &:focus {
+    outline: none;
+    color: $color-card;
+  }
+
+  @media (max-width: $vp-1199) {
+    font-size: 24px;
+    line-height: 29px;
+    font-weight: 700;
+  }
+
+  @media (max-width: $vp-767) {
+    max-width: 130px;
+    font-size: 20px;
+    line-height: 24px;
+  }
+}

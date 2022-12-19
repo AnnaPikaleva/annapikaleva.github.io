@@ -1,0 +1,90 @@
+.swiper-button-next,
+.swiper-button-prev {
+  width: 16px;
+  height: 32px;
+  background-color: transparent;
+  background-image: url("../img/svg/arrow.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  position: absolute;
+
+  &::after {
+    content: "";
+  }
+
+  &:hover {
+    box-shadow: 0 0 2px 2px #e8e8e897;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 2px 2px #e8e8e897;
+  }
+
+  @media (max-width: $vp-767) {
+    width: 10px;
+    height: 19px;
+  }
+}
+
+.swiper-button {
+  &--coaches-prev {
+    transform: rotate(-180deg);
+    top: 65.5%;
+    left: -56px;
+  }
+
+  &--coaches-next {
+    top: 65.5%;
+    right: -56px;
+  }
+
+  &--carousel-prev {
+    transform: rotate(-180deg);
+    top: 67%;
+    left: -56px;
+  }
+
+  &--carousel-next {
+    top: 67%;
+    right: -56px;
+  }
+
+  @media (max-width: $vp-1199) {
+    top: 62.7%;
+
+    &--carousel-prev,
+    &--carousel-next {
+      top: 66%;
+    }
+  }
+
+  @media (max-width: $vp-767) {
+    top: 65%;
+
+    &--coaches-prev {
+      top: 65%;
+      left: -32px;
+    }
+
+    &--coaches-next {
+      top: 65%;
+      right: -32px;
+    }
+
+    &--carousel-prev {
+      transform: rotate(-180deg);
+      top: 62%;
+      left: -32px;
+    }
+
+    &--carousel-next {
+      top: 62%;
+      right: -32px;
+    }
+  }
+}

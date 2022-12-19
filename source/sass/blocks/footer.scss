@@ -1,0 +1,152 @@
+.footer {
+  background-color: $color-black;
+  color: $color-default-white;
+
+  @media (max-width: $vp-767) {
+    padding: 48px 15px 48px;
+  }
+}
+
+.footer__container {
+  padding: 44px 103px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: $vp-1199) {
+    padding: 40px 45px 42px;
+  }
+
+  @media (max-width: $vp-767) {
+    padding: 0;
+    display: block;
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+.footer__logo {
+  display: block;
+
+  @media (max-width: $vp-1199) {
+    padding-right: 15px;
+  }
+
+  @media (max-width: $vp-767) {
+    margin-bottom: -10px;
+    position: absolute;
+    top: 2px;
+    left: 0;
+  }
+}
+
+.footer__logo img {
+  @media (max-width: $vp-1199) {
+    width: 82px;
+    height: 18px;
+  }
+
+  @media (max-width: $vp-767) {
+    width: 68px;
+    height: 15px;
+  }
+}
+
+.footer__nav-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 470px;
+  gap: 40px;
+
+  @media (max-width: $vp-1199) {
+    max-width: 421px;
+    gap: 30px;
+  }
+
+  @media (max-width: $vp-767) {
+    max-width: none;
+    gap: 75px;
+    align-items: center;
+  }
+}
+
+.footer__nav-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+
+  &--first {
+    margin-left: 9px;
+  }
+
+  @media (max-width: $vp-1199) {
+    &--first {
+      margin-left: 0;
+    }
+  }
+
+  @media (max-width: $vp-767) {
+    max-width: none;
+    display: block;
+
+    &--first {
+      margin-top: 35px;
+    }
+
+    &--second {
+      margin-top: -5px;
+    }
+  }
+}
+
+.footer__nav-item {
+  margin-right: 40px;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+
+  @media (max-width: $vp-1199) {
+    margin-right: 30px;
+    padding-bottom: 0;
+    margin-bottom: -2px;
+  }
+
+  @media (max-width: $vp-767) {
+    margin-bottom: 17px;
+  }
+}
+
+.footer__nav-item a {
+  display: inline-block;
+  vertical-align: middle;
+  color: $color-default-white;
+
+  font-size: 14px;
+  line-height: 16px;
+  padding-bottom: 8px;
+
+  &:hover {
+    color: $color-red-line;
+  }
+
+  &:focus {
+    color: $color-red-line;
+    outline: none;
+  }
+
+  @media (max-width: $vp-1199) {
+    // margin-right: 30px;
+    padding-bottom: 0;
+    margin-bottom: -2px;
+  }
+
+  @media (max-width: $vp-767) {
+    // margin-bottom: 21px;
+    font-size: 16px;
+    line-height: 19px;
+  }
+}
