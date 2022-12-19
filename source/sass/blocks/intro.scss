@@ -13,6 +13,7 @@
   align-items: center;
   padding: 51px 103px 51px 218px;
   column-gap: 19px;
+  position: relative;
 
   @media (max-width: $vp-1199) {
     justify-content: center;

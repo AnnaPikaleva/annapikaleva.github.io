@@ -1,18 +1,26 @@
 .index-columns {
-  width: 100%;
-  display: flex;
-  justify-content: flex-start;
   background-image: linear-gradient(to right, $color-font-dark, $color-font-dark 50%, $color-default-white 50%);
-  padding: 56px 103px 60px;
 
   @media (max-width: $vp-1199) {
     background-image: linear-gradient(to bottom, $color-font-dark, $color-font-dark 48%, $color-default-white 48%);
+  }
+
+  @media (max-width: $vp-767) {
+    background-image: linear-gradient(to bottom, $color-font-dark, $color-font-dark 43.1%, $color-default-white 43.1%);
+  }
+}
+
+.index-columns__wrap {
+  display: flex;
+  justify-content: flex-start;
+  padding: 56px 103px 60px;
+
+  @media (max-width: $vp-1199) {
     flex-direction: column;
     padding: 63px 133px;
   }
 
   @media (max-width: $vp-767) {
     padding: 0;
-    background-image: linear-gradient(to bottom, $color-font-dark, $color-font-dark 43.1%, $color-default-white 43.1%);
   }
 }

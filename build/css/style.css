@@ -1358,6 +1358,7 @@ svg:focus {
   -webkit-column-gap: 19px;
   -moz-column-gap: 19px;
   column-gap: 19px;
+  position: relative;
 }
 
 .intro__wrapper {
@@ -1642,7 +1643,7 @@ svg:focus {
   display: block;
   color: #102654;
   border: 2px solid #102654;
-  padding: 24px 44px;
+  padding: 24px;
   width: 76%;
   margin: 0 auto;
 }
@@ -1995,7 +1996,7 @@ svg:focus {
 .advantages__list::before,
 .advantages__list::after {
   content: "";
-  width: 340px;
+  width: 33%;
   height: 2px;
   background-color: rgba(209, 10, 66, 0.2);
   position: absolute;
@@ -2003,6 +2004,10 @@ svg:focus {
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+}
+
+.advantages__list::before {
+  left: -3px;
 }
 
 .advantages__list::after {
@@ -2419,16 +2424,18 @@ svg:focus {
 }
 
 .index-columns {
-  width: 100%;
+  background-image: -webkit-gradient(linear, left top, right top, from(#102654), color-stop(50%, #102654), color-stop(50%, #ffffff));
+  background-image: -o-linear-gradient(left, #102654, #102654 50%, #ffffff 50%);
+  background-image: linear-gradient(to right, #102654, #102654 50%, #ffffff 50%);
+}
+
+.index-columns__wrap {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  background-image: -webkit-gradient(linear, left top, right top, from(#102654), color-stop(50%, #102654), color-stop(50%, #ffffff));
-  background-image: -o-linear-gradient(left, #102654, #102654 50%, #ffffff 50%);
-  background-image: linear-gradient(to right, #102654, #102654 50%, #ffffff 50%);
   padding: 56px 103px 60px;
 }
 
@@ -2733,6 +2740,22 @@ svg:focus {
 @media (max-width: 1239px) {
   .tabs__block--active {
     gap: 25px;
+  }
+
+  .slider__item--hover:hover .slider__subitem {
+    padding: 40px 20px 20px;
+  }
+
+  .slider__subitem p {
+    margin-bottom: 20px;
+  }
+
+  .slider__subitem ul {
+    padding-left: 17%;
+  }
+
+  .contacts {
+    padding-left: 17%;
   }
 }
 
@@ -3077,6 +3100,7 @@ svg:focus {
 
   .slider__subitem p {
     padding-right: 3%;
+    margin-bottom: 31px;
   }
 
   .slider__subitem ul {
@@ -3321,6 +3345,9 @@ svg:focus {
     background-image: -webkit-gradient(linear, left top, left bottom, from(#102654), color-stop(48%, #102654), color-stop(48%, #ffffff));
     background-image: -o-linear-gradient(top, #102654, #102654 48%, #ffffff 48%);
     background-image: linear-gradient(to bottom, #102654, #102654 48%, #ffffff 48%);
+  }
+
+  .index-columns__wrap {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
@@ -3921,10 +3948,13 @@ svg:focus {
   }
 
   .index-columns {
-    padding: 0;
     background-image: -webkit-gradient(linear, left top, left bottom, from(#102654), color-stop(43.1%, #102654), color-stop(43.1%, #ffffff));
     background-image: -o-linear-gradient(top, #102654, #102654 43.1%, #ffffff 43.1%);
     background-image: linear-gradient(to bottom, #102654, #102654 43.1%, #ffffff 43.1%);
+  }
+
+  .index-columns__wrap {
+    padding: 0;
   }
 
   .form {
