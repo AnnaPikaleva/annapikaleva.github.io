@@ -1,46 +1,40 @@
 // Swiper 7.4.1
 import './vendor/swiper.js';
-// import './vendor/focus-visible-polyfill';
 
-const coachesSlider = () => {
-  const swiper = new Swiper('.slider', {
-    direction: 'horizontal',
-    loop: true,
-    allowTouchMove: true,
-    slidesPerGroup: 1,
-    autoHeight: true,
-    breakpoints: {
-      320: {
-        slidesPerView: 1,
-      },
+export const moveCoachesSlider = () => new window.Swiper('.slider', {
 
-      768: {
-        slidesPerView: 2,
-        spaceBetween: 30,
-      },
-      1200: {
-        slidesPerView: 4,
-        spaceBetween: 40,
-      },
+  direction: 'horizontal',
+  loop: true,
+  allowTouchMove: true,
+  slidesPerGroup: 1,
+  autoHeight: true,
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
     },
 
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 30,
     },
-  });
-};
-
-const reviewCarousel = () => {
-  const swiper = new Swiper('.carousel', {
-    direction: 'horizontal',
-    loop: false,
-
-    navigation: {
-      nextEl: '.swiper-button--carousel-next',
-      prevEl: '.swiper-button--carousel-prev',
+    1200: {
+      slidesPerView: 4,
+      spaceBetween: 40,
     },
-  });
-};
+  },
 
-export {coachesSlider, reviewCarousel};
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+});
+
+export const reviewCarousel = () => new window.Swiper('.carousel', {
+  direction: 'horizontal',
+  loop: false,
+
+  navigation: {
+    nextEl: '.swiper-button--carousel-next',
+    prevEl: '.swiper-button--carousel-prev',
+  },
+});

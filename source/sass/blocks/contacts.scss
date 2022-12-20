@@ -83,11 +83,9 @@
 }
 
 .contacts__item {
-  @media (max-width: $vp-1199) {
-    &--tel {
-      grid-column: 2/3;
-      grid-row: 1/2;
-    }
+  &--tel {
+    grid-column: 2/3;
+    grid-row: 1/2;
   }
 }
 

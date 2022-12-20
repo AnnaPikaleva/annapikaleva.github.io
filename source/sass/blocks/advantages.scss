@@ -71,14 +71,6 @@
     right: 0;
   }
 
-  // @media (max-width: $vp-1239) {
-  //   &::before,
-  //   &::after {
-  //     top: 49.5%;
-  //     width: ;
-  //   }
-  // }
-
   @media (max-width: $vp-1199) {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, auto);

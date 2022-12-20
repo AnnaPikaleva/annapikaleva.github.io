@@ -1,7 +1,6 @@
 import {iosVhFix} from './utils/ios-vh-fix';
 import {initModals} from './modules/modals/init-modals';
-// import './vendor.js';
-import {coachesSlider, reviewCarousel} from './vendor.js';
+import {moveCoachesSlider, reviewCarousel} from './vendor.js';
 
 // ---------------------------------
 
@@ -19,8 +18,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // в load следует добавить скрипты, не участвующие в работе первого экрана
   window.addEventListener('load', () => {
     initModals();
-    // sliderCoaches();
-    coachesSlider();
+    moveCoachesSlider();
     reviewCarousel();
     findVideos();
     moveToBlock();
@@ -47,7 +45,7 @@ const moveToBlock = () => {
 // Tabs
 
 const triggers = document.querySelectorAll('.tabs__item');
-const tabsItems = document.querySelectorAll('.tabs__block');
+const tabsItems = document.querySelectorAll('.cards');
 
 triggers.forEach(onTabClick);
 
@@ -60,10 +58,10 @@ function onTabClick(item) {
 
     if (!currentTrigger.classList.contains('tabs__item--active')) {
       triggers.forEach((child) => child.classList.remove('tabs__item--active'));
-      tabsItems.forEach((child) => child.classList.remove('tabs__block--active'));
+      tabsItems.forEach((child) => child.classList.remove('cards--active'));
 
       currentTrigger.classList.add('tabs__item--active');
-      currentTab.classList.add('tabs__block--active');
+      currentTab.classList.add('cards--active');
     }
   });
 }
@@ -135,8 +133,8 @@ for (let i = 0; i < phoneInputs.length; i++) {
 
 const madiaQuery = window.matchMedia('(max-width: 1199px)');
 
-function handleChange(e) {
-  if (e.matches) {
+function handleChange(element) {
+  if (element.matches) {
     const sliderCards = document.querySelectorAll('.slider__item');
     sliderCards.forEach((card) => {
       card.classList.remove('slider__item--hover');
@@ -151,7 +149,6 @@ function handleChange(e) {
 
 madiaQuery.addEventListener('change', handleChange);
 handleChange(madiaQuery);
-
 
 // ---------------------------------
 

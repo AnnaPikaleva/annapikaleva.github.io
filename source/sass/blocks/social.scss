@@ -17,22 +17,16 @@
   &:nth-child(3n) {
     margin-right: 0;
   }
-}
 
-.social__item a {
-  &:focus svg {
+  &:focus-within svg {
     fill: $color-red-line;
   }
 }
 
-svg {
+.social__link svg {
   fill: #030a1a;
 
   &:hover {
-    fill: $color-red-line;
-  }
-
-  &:focus {
     fill: $color-red-line;
   }
 }
