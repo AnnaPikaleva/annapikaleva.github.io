@@ -29,7 +29,7 @@ export const moveCoachesSlider = () => new window.Swiper('.slider', {
   },
 });
 
-export const reviewCarousel = () => new window.Swiper('.carousel', {
+export const swipeCarousel = () => new window.Swiper('.carousel', {
   direction: 'horizontal',
   loop: false,
 

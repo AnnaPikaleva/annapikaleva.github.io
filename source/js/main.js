@@ -1,6 +1,6 @@
 import {iosVhFix} from './utils/ios-vh-fix';
 import {initModals} from './modules/modals/init-modals';
-import {moveCoachesSlider, reviewCarousel} from './vendor.js';
+import {moveCoachesSlider, swipeCarousel} from './vendor.js';
 
 // ---------------------------------
 
@@ -19,7 +19,7 @@ window.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('load', () => {
     initModals();
     moveCoachesSlider();
-    reviewCarousel();
+    swipeCarousel();
     findVideos();
     moveToBlock();
   });
