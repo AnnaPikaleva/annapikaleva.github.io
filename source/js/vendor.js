@@ -1,7 +1,15 @@
 // Swiper 7.4.1
 import './vendor/swiper.js';
 
-export const moveCoachesSlider = () => new window.Swiper('.slider', {
+function deleteTabindex() {
+  const dublicateItems = document.querySelectorAll('.swiper-slide-duplicate');
+
+  dublicateItems.forEach((item) => {
+    item.removeAttribute('tabindex');
+  });
+}
+
+const swiperCoaches = () => new window.Swiper('.slider', {
 
   direction: 'horizontal',
   loop: true,
@@ -29,9 +37,15 @@ export const moveCoachesSlider = () => new window.Swiper('.slider', {
   },
 });
 
+export const moveCoachesSlider = () => {
+  swiperCoaches();
+  deleteTabindex();
+};
+
 export const swipeCarousel = () => new window.Swiper('.carousel', {
   direction: 'horizontal',
   loop: false,
+  autoHeight: true,
 
   navigation: {
     nextEl: '.swiper-button--carousel-next',

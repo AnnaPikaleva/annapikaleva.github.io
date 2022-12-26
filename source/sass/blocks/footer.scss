@@ -3,18 +3,18 @@
   color: $color-default-white;
 
   @media (max-width: $vp-767) {
-    padding: 48px 15px 48px;
+    padding: 44px 15px 48px;
   }
 }
 
 .footer__container {
-  padding: 44px 103px 32px;
+  padding: 40px 103px 36px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 
   @media (max-width: $vp-1199) {
-    padding: 40px 45px 42px;
+    padding: 40px 40px 42px 45px;
   }
 
   @media (max-width: $vp-767) {
@@ -28,15 +28,17 @@
 
 .footer__logo {
   display: block;
+  margin-top: 6px;
 
   @media (max-width: $vp-1199) {
-    padding-right: 15px;
+    padding-right: 10px;
+    margin-top: -1px;
   }
 
   @media (max-width: $vp-767) {
-    margin-bottom: -10px;
+    margin-top: 0;
     position: absolute;
-    top: 2px;
+    top: 6px;
     left: 0;
   }
 }
@@ -53,36 +55,22 @@
   }
 }
 
-.footer__nav-wrap {
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 470px;
-  gap: 40px;
-
-  @media (max-width: $vp-1199) {
-    max-width: 421px;
-    gap: 30px;
-  }
-
-  @media (max-width: $vp-767) {
-    max-width: none;
-    gap: 75px;
-    align-items: center;
-  }
-}
-
 .footer__nav-list {
   margin: 0;
   padding: 0;
   list-style: none;
   display: flex;
   flex-wrap: wrap;
+  max-width: 700px;
 
   &--first {
     margin-left: 9px;
   }
 
   @media (max-width: $vp-1199) {
+    align-items: center;
+    max-width: 600px;
+
     &--first {
       margin-left: 0;
     }
@@ -90,15 +78,8 @@
 
   @media (max-width: $vp-767) {
     max-width: none;
-    display: block;
-
-    &--first {
-      margin-top: 35px;
-    }
-
-    &--second {
-      margin-top: -5px;
-    }
+    display: grid;
+    grid-template-columns: repeat(2, auto);
   }
 }
 
@@ -112,11 +93,29 @@
   @media (max-width: $vp-1199) {
     margin-right: 30px;
     padding-bottom: 0;
-    margin-bottom: -2px;
   }
 
   @media (max-width: $vp-767) {
-    margin-bottom: 17px;
+    margin-bottom: 16px;
+    grid-column: 2/3;
+
+    &--services {
+      grid-column: 1/2;
+      grid-row: 2/3;
+    }
+
+    &--membership {
+      grid-column: 1/2;
+      grid-row: 3/4;
+    }
+
+    &--offer {
+      grid-row: 1/2;
+    }
+
+    &--coach {
+      grid-row: 2/3;
+    }
   }
 }
 
@@ -127,7 +126,7 @@
 
   font-size: 14px;
   line-height: 16px;
-  padding-bottom: 8px;
+  padding-bottom: 3px;
 
   &:hover {
     color: $color-red-line;
@@ -140,11 +139,12 @@
 
   @media (max-width: $vp-1199) {
     padding-bottom: 0;
-    margin-bottom: -2px;
+    margin-bottom: 2px;
   }
 
   @media (max-width: $vp-767) {
     font-size: 16px;
     line-height: 19px;
+    margin-bottom: -2px;
   }
 }

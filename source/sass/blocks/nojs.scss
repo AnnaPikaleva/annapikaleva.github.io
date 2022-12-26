@@ -13,3 +13,25 @@
     }
   }
 }
+
+.nojs .slider__line.swiper-wrapper,
+.nojs .carousel__track.swiper-wrapper {
+  width: auto;
+  height: auto;
+  flex-direction: row;
+  gap: 39px;
+  flex-wrap: wrap;
+}
+
+.nojs .slider__item.swiper-slide {
+  width: auto;
+  height: auto;
+}
+
+.nojs .slider__img {
+  width: auto;
+}
+
+.nojs .carousel__item.swiper-slide {
+  height: auto;
+}

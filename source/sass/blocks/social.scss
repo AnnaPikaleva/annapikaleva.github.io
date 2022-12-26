@@ -21,6 +21,14 @@
   &:focus-within svg {
     fill: $color-red-line;
   }
+
+  @media (max-width: $vp-1199) {
+    margin-top: 5px;
+  }
+
+  @media (max-width: $vp-767) {
+    margin-top: 0px;
+  }
 }
 
 .social__link svg {

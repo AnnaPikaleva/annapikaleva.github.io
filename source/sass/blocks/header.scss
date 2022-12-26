@@ -12,6 +12,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  gap: 8px;
 
   @media (max-width: $vp-1199) {
     padding: 33px 45px 0 45px;
@@ -25,15 +26,14 @@
 .header__logo {
   display: block;
   margin-top: 10px;
+  padding-right: 7%;
 
   @media (max-width: $vp-1199) {
     margin-top: 8px;
   }
 
   @media (max-width: $vp-767) {
-    margin-top: 5px;
-    width: 69px;
-    height: 24px;
+    margin-top: 0;
   }
 }
 
@@ -41,6 +41,11 @@
   @media (max-width: $vp-1199) {
     width: 82px;
     height: 17px;
+  }
+
+  @media (max-width: $vp-767) {
+    width: 69px;
+    height: 24px;
   }
 }
 
