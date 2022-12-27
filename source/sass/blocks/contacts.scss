@@ -27,7 +27,6 @@
   @media (max-width: $vp-1199) {
     font-size: 42px;
     line-height: 50px;
-    // margin-bottom: 32px;
   }
 
   @media (max-width: $vp-767) {
@@ -95,7 +94,13 @@
     max-width: none;
 
     &--tel {
-      max-width: 116px;
+      min-width: 116px;
+    }
+
+    &--tel ul {
+      margin: 0;
+      padding: 0;
+      list-style: 0;
     }
   }
 }

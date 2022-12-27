@@ -22,6 +22,7 @@ window.addEventListener('DOMContentLoaded', () => {
     swipeCarousel();
     findVideos();
     moveToBlock();
+    // handleChange(mediaQuery);
   });
 });
 
@@ -131,11 +132,12 @@ for (let i = 0; i < phoneInputs.length; i++) {
 
 // Click on slider card
 
-const madiaQuery = window.matchMedia('(max-width: 1199px)');
+const mediaQuery = window.matchMedia('(max-width: 1199px)');
+const mediaQueryDesktop = window.matchMedia('(min-width: 1200px)');
 
 function handleChange(element) {
+  const sliderCards = document.querySelectorAll('.slider__item');
   if (element.matches) {
-    const sliderCards = document.querySelectorAll('.slider__item');
     sliderCards.forEach((card) => {
       card.classList.remove('slider__item--hover');
       card.addEventListener('click', () => {
@@ -147,8 +149,22 @@ function handleChange(element) {
   }
 }
 
-madiaQuery.addEventListener('change', handleChange);
-handleChange(madiaQuery);
+
+function handleChangeDesktop(element) {
+  const sliderCards = document.querySelectorAll('.slider__item');
+  if (element.matches) {
+    sliderCards.forEach((card) => {
+      card.classList.add('slider__item--hover');
+      const subitemCard = card.querySelector('.slider__subitem');
+      subitemCard.classList.remove('slider__subitem--active');
+    });
+  }
+}
+
+mediaQuery.addEventListener('change', handleChange);
+mediaQueryDesktop.addEventListener('change', handleChangeDesktop);
+handleChangeDesktop(mediaQueryDesktop);
+
 
 // ---------------------------------
 

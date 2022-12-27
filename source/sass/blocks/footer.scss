@@ -11,7 +11,7 @@
   padding: 40px 103px 36px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 
   @media (max-width: $vp-1199) {
     padding: 40px 40px 42px 45px;
@@ -28,11 +28,11 @@
 
 .footer__logo {
   display: block;
-  margin-top: 6px;
+  margin-top: 10px;
 
   @media (max-width: $vp-1199) {
     padding-right: 10px;
-    margin-top: -1px;
+    margin-top: 7px;
   }
 
   @media (max-width: $vp-767) {
@@ -62,12 +62,14 @@
   display: flex;
   flex-wrap: wrap;
   max-width: 700px;
+  margin-top: 4px;
 
   &--first {
     margin-left: 9px;
   }
 
   @media (max-width: $vp-1199) {
+    margin-top: 6px;
     align-items: center;
     max-width: 600px;
 
@@ -80,6 +82,7 @@
     max-width: none;
     display: grid;
     grid-template-columns: repeat(2, auto);
+    margin-top: 0;
   }
 }
 
@@ -139,7 +142,6 @@
 
   @media (max-width: $vp-1199) {
     padding-bottom: 0;
-    margin-bottom: 2px;
   }
 
   @media (max-width: $vp-767) {

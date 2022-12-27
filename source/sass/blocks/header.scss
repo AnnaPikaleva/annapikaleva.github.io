@@ -1,7 +1,6 @@
 .header {
-  position: absolute;
-  top: 0;
-  z-index: 10;
+  background-image: conic-gradient(from 130.31deg at 16.03% 39.06%, #b80027 -46.69deg, #003d85 32.24deg, #b80027 313.31deg, #003d85 392.24deg);
+  position: relative;
   width: 100%;
   background-color: transparent;
   min-width: 320px;
@@ -19,7 +18,33 @@
   }
 
   @media (max-width: $vp-767) {
-    padding: 15px;
+    padding: 0;
+  }
+}
+
+.header__container {
+  @media (max-width: $vp-767) {
+    padding: 15px 15px 80px;
+  }
+}
+
+.header__nav-items {
+  max-width: 750px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px 30px;
+
+  @media (max-width: $vp-1199) {
+    max-width: 500px;
+  }
+
+  @media (max-width: $vp-767) {
+    max-width: 400px;
+  }
+
+  @media (max-width: $vp-545) {
+    max-width: 130px;
   }
 }
 
