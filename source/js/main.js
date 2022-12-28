@@ -135,12 +135,10 @@ for (let i = 0; i < phoneInputs.length; i++) {
 
 const mediaQuery = window.matchMedia('(max-width: 1199px)');
 const mediaQueryDesktop = window.matchMedia('(min-width: 1200px)');
-console.log(mediaQueryDesktop);
 
 function handleChangeDesktop(element) {
   if (element.matches) {
     const sliderCardsd = document.querySelectorAll('.slider__item');
-    console.log('cards: ' + sliderCardsd);
     sliderCardsd.forEach((card) => {
       card.classList.add('slider__item--hover');
       const subitemCard = card.querySelector('.slider__subitem');
@@ -150,8 +148,6 @@ function handleChangeDesktop(element) {
 }
 
 function handleChange(element) {
-
-  // console.log('card: ' + sliderCards);
   if (element.matches) {
     const sliderCards = document.querySelectorAll('.slider__item');
     sliderCards.forEach((card) => {

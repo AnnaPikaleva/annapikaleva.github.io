@@ -2438,7 +2438,7 @@ button,
   -webkit-box-pack: start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  padding: 56px 103px 62px;
+  padding: 56px 103px 63px;
 }
 
 .form {
@@ -2495,7 +2495,7 @@ button,
   -webkit-column-gap: 120px;
   -moz-column-gap: 120px;
   column-gap: 120px;
-  row-gap: 15px;
+  row-gap: 20px;
   position: relative;
 }
 
@@ -2542,6 +2542,7 @@ button,
 
 .contacts__item a {
   cursor: pointer;
+  display: block;
 }
 
 .contacts__item a:hover {
